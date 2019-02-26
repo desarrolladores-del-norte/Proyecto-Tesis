@@ -1,0 +1,21 @@
+<?php
+
+//if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+ //   echo      "<script src='". $_layoutParams['js'][0]."'></script>";
+?>
+
+<div id="error"><?php if(isset($this->error)) echo $this->error; ?></div>
+
+
+<div id="error"><?php  echo $this->prueba; ?></div>
+<form id="form1" method="post" action="">
+
+    <input type="hidden" name="guardar" value="1" />
+    <p>Titulo:
+        <input type="text" name="titulo" value="<?php if(isset($this->datos['titulo'])) echo $this->datos['titulo']; ?>"></p>
+
+    <p>Cuerpo:
+        <input type="text" name="cuerpo" value="<?php if(isset($this->datos['cuerpo'])) echo $this->datos['cuerpo']; ?>"/></p>
+    <p><input type="submit" value="Guardar" /></p>
+
+</form>

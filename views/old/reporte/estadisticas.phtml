@@ -1,0 +1,78 @@
+<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    for($i=0;$i<count($_layoutParams['js']);$i++)
+        echo      "<script src='". $_layoutParams['js'][$i]."'></script>";
+?>
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-lg-4" >
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Reporte de Ingresos Por Fecha</h4></div>
+                <div class="panel-body">
+                    <form class="" method="post" action="">
+                        <input name="reportee" value="1" type="hidden" />
+
+
+
+                        <br>
+
+                        <div class="input-group class="col-lg-4"">
+                            <div class="input-group-addon">Desde</div>
+                            <input required  type="date" name="fecha1" class="form-control" />
+                        </div>
+                            <br>
+                        <div class="input-group class="col-lg-4"">
+                            <div class="input-group-addon">Hasta</div>
+                            <input required  type="date" name="fecha2" class="form-control" />
+
+                        </div>
+
+                        <br>
+                        <div class="input-group class="col-lg-4"">
+                        <div class="input-group-addon">Tipo de Gráficos</div>
+                       <select class="form-control" name="tipog">
+                           <option>Pastel</option>
+                           <option>Barras</option>
+                       </select>
+
+                        </div>
+
+
+
+                        <br>
+
+                        <input type="submit" class="btn btn-danger" value="Ver Reporte" />
+
+                    </form>
+                </div>
+             </div>
+         </div>
+
+
+
+
+            <div class="col-lg-8" id="container" style="min-width: 410px; height: 500px; max-width: 700px; margin: 0 auto"></div>
+
+
+            <?php
+            if(isset($this->reporte_estadistico))
+                echo $this->tablat;
+                echo $this->reporte_estadistico;
+            ?>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+

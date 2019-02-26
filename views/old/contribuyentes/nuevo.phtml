@@ -1,0 +1,601 @@
+<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    echo      "<script src='". $_layoutParams['js'][0]."'></script>";
+?>
+
+<?php if(isset($this->errores)) echo $this->errores;?>
+<nav xmlns="http://www.w3.org/1999/html">
+
+    <div align="center">
+        <h2>Parametrización de Contribuyentes con Tributos</h2>
+    </div>
+</nav>
+
+
+<form id="formcontribuyentes" method="post" action="">
+
+
+    <input type="hidden" name="agregar" value="1" />
+
+    <div class="">
+
+
+
+        <div class="col-md-12">
+
+            <h3 align="center" >Datos del Contribuyente</h3>
+            <br><br><br>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">cedula</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">N° identificacion</div>
+                        <input required type="text" class="form-control" id="inlineFormInputGroup" placeholder="cedula" name="RUC" value="<?php if(isset($this->datos['RUC'])) echo $this->datos['RUC']; ?>">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Nombre y Apellidos </div>
+                        <input required type="text" class="form-control" id="inlineFormInputGroup" placeholder="nombre" name="nombre" value="<?php if(isset($this->datos['nombre'])) echo $this->datos['nombre']; ?>">
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="sr-only" for="inlineFormInputGroup">direccion</label>
+                    <div class="input-group ">
+                        <div class="input-group-addon">Dirección</div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="direccion" name="direccion" value="<?php if(isset($this->datos['direccion'])) echo $this->datos['direccion']; ?>">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <br>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">telefono</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">N° de Telefono</div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="telefono" name="telefono" value="<?php if(isset($this->datos['telefono'])) echo $this->datos['telefono']; ?>">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">correo</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Dirección Electronica</div>
+                        <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="correo" name="email" value="<?php if(isset($this->datos['email'])) echo $this->datos['email']; ?>">
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label class="sr-only" for="form-control">Tipo/persona</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Tipo/Persona</div>
+                        <select class="form-control" id="inlineFormInputGroup" placeholder="tipo" name="tipo_persona" >
+
+                            <?php if(isset($this->datos['tipo_persona'])) echo '<option>'.$this->datos['tipo_persona'].'</option>'; ?>
+
+                            <option>Natural</option>
+                            <option>Juridica</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">clave</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Clave de Acceso</div>
+                        <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="clave" name="clave_acceso" value="<?php if(isset($this->datos['clave_acceso'])) echo $this->datos['clave_acceso']; ?>">
+                    </div>
+                </div>
+
+
+
+            </div >
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">fecha</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">Fecha de Registro</div>
+                        <input type="date" class="form-control" id="inlineFormInputGroup" placeholder="fecha" name="fecha_registro" value="<?php if(isset($this->datos['fecha_registro'])) echo $this->datos['fecha_registro']; ?>">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="sr-only" for="inlineFormInputGroup">fecha</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">N° de Expediente</div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="N° de Expediente" name="expediente" value="<?php if(isset($this->datos['expediente'])) echo $this->datos['expediente']; ?>">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <br>
+
+
+            <div class="row">
+                <div class="col-lg-offset-5">
+                    <?php if(isset($this->con_ruc))
+                        echo "<button class='btn btn-primary btn-lg' disabled>Guardar Registro</button>";
+                    else
+                        echo "<button class='btn btn-primary btn-lg' >Guardar Registro</button>";
+
+                    ?>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+</form>
+
+
+
+<div class="row" id="negocios_cliente">
+
+
+    <div class="col-md-12">
+        <br>
+
+        <a href="#obligaciones" class="btn btn-danger <?php if(isset($this->clase_obligacion)) echo $this->clase_obligacion;?>" data-toggle="modal" id="btnobligaciones">Obligaciones Tributaria</a>
+
+        <div class="modal fade" id="obligaciones">
+
+            <div class="modal-dialog modal-lg" >
+                <div class ="modal-content" id="fondo2">
+                    <!--- header dela ventana-->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" align ="center"> Ventana para cargar los impuestos</h4>
+                    </div>
+                    <!--- contenido de la ventana-->
+
+
+                    <div  align ="center">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <h5>Seleccione la Obligacion Tributaria</h5>
+                            <select class="form-control" id="opcion_obligacion" placeholder="tipo" name="tipo_obligacion">
+                                <option>Seleccione la Obligación</option>
+                                <option>Negocio</option>
+                                <option>Propiedad</option>
+                            </select>
+                        </div></div>
+
+
+                    <form name="formnegocio" id="formnegocio"  method="post" class="hide">
+                        <div class="modal-body" align ="center">
+
+
+                            <input type="hidden" name="agregarnegocio" value="1" />
+                            <div class="modal-footer">
+
+                                <!--- datos del negocio-->
+                                <h4 class="modal-title" align ="center"> Datos del Negocio</h4>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                            <div class="input-group-addon">Tipo de Negocio</div>
+                                            <select class="form-control" data-live-search="true" name="tipo" >
+                                                <?php if(isset($this->datosn['tipo'])) echo '<option>'.$this->datosn['tipo'].'</option>';?>
+                                                <OPTION DATA-TOKENS="MUSTARD">TRUCHA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">RESTAURANTE</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">TIENDA</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">MISSELANEA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">SUPERMECADO</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">LICORERIA</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">ASERRADERO</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">BENEFICIO DE CAFÉ</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">PROCESADORA DE TABACO</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">EMPRESA CONSTRUCTORA</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">FABRICA</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">SERVICIOS BANCARIOS</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">SERVICIOS PROFESIONALES</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">SERVICIOS MEDICOS</OPTION>
+                                                <OPTION DATA-TOKENS="MUSTARD">TALLER</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">SALON DE BELLEZA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">MOLINOS</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">TOSTADORA DE CAFÉ</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">BAR</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">BAR Y RESTAURANTE</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">PANADERIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">LICORERIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">PULPERIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">FARMACIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">TRANSPORTE</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">COMEDOR</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">VULCANIZADORA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">ENTIDAD FINANCIERA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">PUBLICIDAD</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">AQUILER </OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">BILLARES</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">VIDEO JUEGO</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">FRITANGA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">FOTOCOPIADO</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">TIENDA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">IMPORTACIONES Y EXPORTACIONES</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">JUEGO AZAR</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">AUTOLAVADO</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">CLINICA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">FUNERARIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">EMISORA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">BUFFE JURIDICO</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">SUPERMERCADO</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">CAFETIN</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">DECORACION</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">ACADEMIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">ESCUELA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">SERIGRAFIAS</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">LIBRERÍA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">CYBER</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">BARBERIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">TELECOMUNICACIONES</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">CENTRO DE CAPACITACIONES</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">FERRETERIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">LITOGRAFIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">ZAPATERIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">FUNERARIA</OPTION>
+                                                <OPTION DATA-TOKENS="FROSTING">SERVICIO DE TOPOGRAFIA</OPTION>
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0"><div class="input-group-addon">Clasificación</div>
+                                            <select class="form-control" data-live-search="true" name="clasificacion" >
+                                                <?php if(isset($this->datosn['clasificacion'])) echo '<option>'.$this->datosn['clasificacion'].'</option>'; ?>
+                                                <option data-tokens="mustard">Comercio</option>
+                                                <option data-tokens="frosting">Servicio</option>
+                                                <option data-tokens="frosting">Industria</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0"><div class="input-group-addon">Barrio</div>
+                                            <select class="form-control" data-live-search="true" name="barrio" >
+                                                <?php if(isset($this->datosn['barrio'])) echo '<option>'.$this->datosn['barrio'].'</option>'; ?>
+                                                <option data-tokens="ketchup mustard">Barrio donde se Ubica el negocio</option>
+                                                <option data-tokens="mustard">ANEXO YELBA MARIA ANTUNEZ</option>
+                                                <option data-tokens="mustard">YELBA MARIA ANTUNEZ</option>
+                                                <option data-tokens="mustard">DANILO PONCE</option>
+                                                <option data-tokens="mustard">JOSE SANTOS RODRIGUEZ</option>
+                                                <option data-tokens="mustard">LAURA SOFIA OLIVAS</option>
+                                                <option data-tokens="mustard">LEONARDO MATUTE</option>
+                                                <option data-tokens="mustard">ENRIQUE LACAYO FARFAN</option>
+                                                <option data-tokens="mustard">CARLOS MANUEL JARQUIN</option>
+                                                <option data-tokens="mustard">RAMON AUGUSTO LOPEZ</option>
+                                                <option data-tokens="mustard">SANDINO</option>
+                                                <option data-tokens="mustard">SAN ANTONIO DE TEJAS</option>
+                                                <option data-tokens="mustard">HERMANOS ZAMORA</option>
+                                                <option data-tokens="mustard">MONSEÑOR MADRIGAL</option>
+                                                <option data-tokens="mustard">NOEL WEELOCK</option>
+                                                <option data-tokens="mustard">ROBERTO GOMEZ</option>
+                                                <option data-tokens="mustard">26 DE SEPTIEMBRE</option>
+                                                <option data-tokens="mustard">CRISTO DEL ROSARIO</option>
+                                                <option data-tokens="mustard">19 DE JULIO</option>
+                                                <option data-tokens="mustard">REPARTO LAS SEGOVIAS</option>
+                                                <option data-tokens="mustard">NUEVO AMANECER</option>
+                                                <option data-tokens="mustard">EL TUNAL</option>
+                                                <option data-tokens="mustard">TOMAS BORGE</option>
+                                                <option data-tokens="mustard">JUAN CARLOS MENDOZA</option>
+                                                <option data-tokens="mustard">MODESTO AGURCIA</option>
+                                                <option data-tokens="mustard">EL QUEBRANTADERO</option>
+                                                <option data-tokens="mustard">PUEBLOS UNIDOS</option>
+                                                <option data-tokens="mustard">DINAMARCA</option>
+                                                <option data-tokens="mustard">TEODORO LOPEZ</option>
+                                                <option data-tokens="mustard">SAN NICOLAS DE TOLENTINO</option>
+                                                <option data-tokens="mustard">GRACIAS A DIOS</option>
+                                                <option data-tokens="mustard">MARIA AUXILIADORA</option>
+                                                <option data-tokens="mustard">LA FUENTE</option>
+                                                <option data-tokens="mustard">ANEXO LAURA SOFIA OLIVAS</option>
+                                                <option data-tokens="mustard">SANTA ANA</option>
+                                                <option data-tokens="mustard">NORA ASTORGA</option>
+                                                <option data-tokens="mustard">NICARAO</option>
+                                                <option data-tokens="mustard">JOSE SANTOS DUARTE</option>
+                                            </select>
+                                        </div>
+                                        <br>
+
+
+                                    </div>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Nombre del Negocio</div>
+                                        <input class="form-control" type="text" placeholder="Ingrese nombre del negocio" name="nombrenegocio" value="<?php if(isset($this->datosn['nombrenegocio'])) echo $this->datosn['nombrenegocio']; ?>">
+                                    </div>
+
+                                    <br>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Dirección del Negocio</div>
+                                        <input class="form-control" type="text" placeholder="Ingrese la direccion del Negocio" name="direccion" value="<?php if(isset($this->datosn['direccion'])) echo $this->datosn['direccion']; ?>">
+                                    </div>
+                                    <br>
+
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Descripción del Negocio</div>
+                                        <input class="form-control" type="text" placeholder="Ingrese la descripción del Negocio" name="descripcion" value="<?php if(isset($this->datosn['descripcion'])) echo $this->datosn['descripcion']; ?>">
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <div class="input-group-addon">N° Matricula</div>
+                                            <input type="text" class="form-control" placeholder="N° de Matricula" name="matricula" value="<?php if(isset($this->datosn['matricula'])) echo $this->datosn['matricula']; ?>">
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <div class="input-group-addon">N° de Telefono</div>
+                                            <input type="text" class="form-control" placeholder="N° de Telefono" name="telefono" value="<?php if(isset($this->datosn['telefono'])) echo $this->datosn['telefono']; ?>">
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <div class="input-group-addon">Dirección Electronica</div>
+                                            <input type="text" class="form-control" placeholder="Direccion electronica" name="email" value="<?php if(isset($this->datosn['email'])) echo $this->datosn['email']; ?>">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="modal-footer">
+                                    <button type="buton" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                                    <button type="buton" class="btn btn-primary" name="guardarnegocio">Guardar</button>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                    <!---a qui va el boto--->
+
+
+
+
+
+
+
+                    <!---a qui va el datos del IBI--->
+
+                    <form  name="formpropiedad" id="formpropiedad"  method="post" class="hide">
+                        <div class="modal-footer" Bienes Inmuebles id="propiedades_cliente">
+
+
+                            <input type="hidden" name="agregarpropiedad" value="1" />
+                            <h4 class="modal-title" align ="center">Datos de los Bienes Inmuebles</h4>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="input-group-addon">Codigo Catastral</div>
+                                    <input type="text" class="form-control" placeholder="Codigo Catastras" name="codigo" value="<?php if(isset($this->datosp['codigo'])) echo $this->datosp['codigo']; ?>">
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="input-group-addon">Valor Catastral</div>
+                                    <input type="text" class="form-control" placeholder="Valor catastral" name="valor" value="<?php if(isset($this->datosp['valor'])) echo $this->datosp['valor']; ?>">
+                                </div>
+                                <div class="col-xs-5">
+                                    <div class="input-group-addon">Excepción</div>
+                                    <select class="form-control" data-live-search="true" name="excepcion" >
+                                        <?php if(isset($this->datosp['excepcion'])) echo '<option>'.$this->datosp['excepcion'].'</option>'; ?>
+                                        <option data-tokens="ketchup mustard">Excepción de Impuesto</option>
+                                        <option data-tokens="mustard">No Aplica</option>
+                                        <option data-tokens="mustard">Jubila</option>
+                                        <option data-tokens="frosting">Discapacitado</option>
+                                        <option data-tokens="frosting">Sin Fines de Lucro</option>
+                                        <option data-tokens="frosting">Instituciones del Estado</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="row">
+                                <div class="col-xs-8"><div class="input-group-addon">Dirección de la Propiedad</div>
+                                    <input type="text" class="form-control" placeholder="Direción de la Propiedad" name="direccion" value="<?php if(isset($this->datosp['direccion'])) echo $this->datosp['direccion']; ?>">
+                                </div>
+
+                                <div class="col-xs-4"><div class="input-group-addon">Barrio donde se Ubica la propiedad</div>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <select class="form-control" data-live-search="true" name="barrio" >
+                                            <?php if(isset($this->datosp['barrio'])) echo '<option>'.$this->datosp['barrio'].'</option>'; ?>
+                                            <option data-tokens="ketchup mustard">Barrio donde se Ubica la Propiedad</option>
+                                            <option data-tokens="mustard">ANEXO YELBA MARIA ANTUNEZ</option>
+                                            <option data-tokens="mustard">YELBA MARIA ANTUNEZ</option>
+                                            <option data-tokens="mustard">DANILO PONCE</option>
+                                            <option data-tokens="mustard">JOSE SANTOS RODRIGUEZ</option>
+                                            <option data-tokens="mustard">LAURA SOFIA OLIVAS</option>
+                                            <option data-tokens="mustard">LEONARDO MATUTE</option>
+                                            <option data-tokens="mustard">ENRIQUE LACAYO FARFAN</option>
+                                            <option data-tokens="mustard">CARLOS MANUEL JARQUIN</option>
+                                            <option data-tokens="mustard">RAMON AUGUSTO LOPEZ</option>
+                                            <option data-tokens="mustard">SANDINO</option>
+                                            <option data-tokens="mustard">SAN ANTONIO DE TEJAS</option>
+                                            <option data-tokens="mustard">HERMANOS ZAMORA</option>
+                                            <option data-tokens="mustard">MONSEÑOR MADRIGAL</option>
+                                            <option data-tokens="mustard">NOEL WEELOCK</option>
+                                            <option data-tokens="mustard">ROBERTO GOMEZ</option>
+                                            <option data-tokens="mustard">26 DE SEPTIEMBRE</option>
+                                            <option data-tokens="mustard">CRISTO DEL ROSARIO</option>
+                                            <option data-tokens="mustard">19 DE JULIO</option>
+                                            <option data-tokens="mustard">REPARTO LAS SEGOVIAS</option>
+                                            <option data-tokens="mustard">NUEVO AMANECER</option>
+                                            <option data-tokens="mustard">EL TUNAL</option>
+                                            <option data-tokens="mustard">TOMAS BORGE</option>
+                                            <option data-tokens="mustard">JUAN CARLOS MENDOZA</option>
+                                            <option data-tokens="mustard">MODESTO AGURCIA</option>
+                                            <option data-tokens="mustard">EL QUEBRANTADERO</option>
+                                            <option data-tokens="mustard">PUEBLOS UNIDOS</option>
+                                            <option data-tokens="mustard">DINAMARCA</option>
+                                            <option data-tokens="mustard">TEODORO LOPEZ</option>
+                                            <option data-tokens="mustard">SAN NICOLAS DE TOLENTINO</option>
+                                            <option data-tokens="mustard">GRACIAS A DIOS</option>
+                                            <option data-tokens="mustard">MARIA AUXILIADORA</option>
+                                            <option data-tokens="mustard">LA FUENTE</option>
+                                            <option data-tokens="mustard">ANEXO LAURA SOFIA OLIVAS</option>
+                                            <option data-tokens="mustard">SANTA ANA</option>
+                                            <option data-tokens="mustard">NORA ASTORGA</option>
+                                            <option data-tokens="mustard">NICARAO</option>
+                                            <option data-tokens="mustard">JOSE SANTOS DUARTE</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <br>
+
+                                <div class="input-group col-lg-9 col-lg-offset-1">
+                                    <div class="input-group-addon">Descripción de la Propiedad</div>
+                                    <input class="form-control" type="text" placeholder="Ingrese la descripción de la propiedad" name="descripcion" value="<?php if(isset($this->datosp['descripcion'])) echo $this->datosp['descripcion']; ?>">
+                                </div>
+                            </div>
+
+
+
+                            <br>
+                            <!---a qui va el boto IBI--->
+                            <div class="modal-footer">
+                                <button type="buton" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                                <button type="buton" class="btn btn-primary">Guardar</button>
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </form>
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="col-lg-12">
+
+
+        <div class="row ">
+            <div class="col-lg-12">
+                <?php
+                if (isset($this->negocios_clientes) && count($this->negocios_clientes))
+                {
+                    echo '<h4 class="alert-warning">Lista de Negocios</h4>';
+                    echo "<table class='table table-bordered table-hover'>
+                
+                   <tr><th>Nombre Negocio</th><th>Número Matricula</th><th>Direccion</th><th>Tipo de Negocio</th><th>Clasificación</th><th>Descripción</th><th>Acción</th></tr>";
+                    for($i=0;$i<count($this->negocios_clientes);$i++)
+                    {
+                        echo '<tr><td>'.$this->negocios_clientes[$i]['nombrenegocio'].'</td>'.
+                            "<td>".$this->negocios_clientes[$i]['matricula']."</td>
+             <td>".$this->negocios_clientes[$i]['direccion']."</td>
+              <td>".$this->negocios_clientes[$i]['tipo']."</td>
+              <td>".$this->negocios_clientes[$i]['clasificacion']."</td>
+              <td>".$this->negocios_clientes[$i]['descripcion']."</td>
+                <td><p><a class='  hidden-print' title='Editar' href='".BASE_URL."contribuyentes/editar_negocio/". $this->negocios_clientes[$i]['idn'].  "'><i class='fa  fa-pencil' aria-hidden='true'></i></a>
+                <a class='  hidden-print' title='Cargar Cobro' href='".BASE_URL."contribuyentes/pago_negocio/". $this->negocios_clientes[$i]['idn']. "'><i class='fa  fa-usd' aria-hidden='true'></i></a>
+                <a onclick=\"if (!confirm('Está seguro que desea eliminar el registro?')) return false;\" class='  hidden-print' title='Eliminar' href='".BASE_URL."contribuyentes/eliminar_negocio/". $this->negocios_clientes[$i]['idn']. "'><i class='fa  fa-trash' aria-hidden='true'></i></a></p></td></tr>";
+                    }
+                    echo '</table>';
+                }
+                else
+                    echo '<h4 class="alert-warning">No posee Negocios...........................................</h4>';
+                ?>
+
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <?php
+                if (isset($this->propiedades_clientes) && count($this->propiedades_clientes))
+                {
+                    echo '<h4 class="alert-warning">Lista de Propiedades</h4>';
+                    echo "<table class='table table-bordered table-hover'>
+                     <tr><th>Código Catastral</th><th>Valor de la Propiedad</th><th>Excepción</th><th>Dirección</th><th>Barrio</th><th>Acción</th></tr>";
+                    for($i=0;$i<count($this->propiedades_clientes);$i++)
+                    {
+                        echo '<tr><td>'.$this->propiedades_clientes[$i]['codigo'].'</td>'.
+                            "<td>".$this->propiedades_clientes[$i]['valor']."</td>
+             <td>".$this->propiedades_clientes[$i]['excepcion']."</td>
+              <td>".$this->propiedades_clientes[$i]['direccion']."</td>
+              <td>".$this->propiedades_clientes[$i]['barrio']."</td>
+                <td><p><a class=' hidden-print' title='Editar' href='".BASE_URL."contribuyentes/editar_propiedad/". $this->propiedades_clientes[$i]['idp']. "'><i class='fa  fa-pencil' aria-hidden='true'></i></a>
+                <a class=' hidden-print' title='Cargar Cobro' href='".BASE_URL."contribuyentes/pago_propiedad/". $this->propiedades_clientes[$i]['idp']. "'><i class='fa  fa-usd' aria-hidden='true'></i></a>
+                <a onclick=\"if (!confirm('Está seguro que desea eliminar el registro?')) return false;\" class=' hidden-print' title='Eliminar' href='".BASE_URL."contribuyentes/eliminar_propiedad/". $this->propiedades_clientes[$i]['idp']. "'><i class='fa  fa-trash' aria-hidden='true'></i></a></p></td></tr>";
+                    }
+                    echo '</table>';
+                }
+                else
+                    echo '<h4 class="alert-warning">No posee Propiedades...........................................</h4>';
+                ?>
+
+
+            </div>
+        </div>
+    </div>

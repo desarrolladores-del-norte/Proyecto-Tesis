@@ -1,0 +1,40 @@
+<div class="row">
+    <h3>Lista de Negocios</h3>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-lg-12">
+        <?php
+        if (isset($this->lista_negocios) && count($this->lista_negocios))
+        {
+
+            echo "<table class='table table-bordered table-hover' id='Jtabla'>
+                
+                   <thead><tr><th>ID</th><th>Nombre Negocio</th><th>Número Matricula</th><th>Direccion</th><th>Tipo de Negocio</th><th>Clasificación</th><th>Descripción</th><th>Acción</th></tr></thead><tbody>";
+            for($i=0;$i<count($this->lista_negocios);$i++)
+            {
+                echo '<tr><td>'.$this->lista_negocios[$i]['idn'].'</td>'.'<td>'.$this->lista_negocios[$i]['nombrenegocio'].'</td>'.
+                    "<td>".$this->lista_negocios[$i]['matricula']."</td>
+             <td>".$this->lista_negocios[$i]['direccion']."</td>
+              <td>".$this->lista_negocios[$i]['tipo']."</td>
+              <td>".$this->lista_negocios[$i]['clasificacion']."</td>
+              <td>".$this->lista_negocios[$i]['descripcion']."</td>
+                <td><p> <a class=' hidden-print' title='Editar' href='".BASE_URL."contribuyentes/editar_negocio/". $this->lista_negocios[$i]['idn'].  "'><i class='fa  fa-pencil' aria-hidden='true'></i></a>
+                <a class=' hidden-print' title='Cargar Cobro' href='".BASE_URL."contribuyentes/pago_negocio/". $this->lista_negocios[$i]['idn']. "'><i class='fa  fa-usd' aria-hidden='true'></i></a>
+                <a class=' hidden-print' title='Eliminar' href='".BASE_URL."contribuyentes/eliminar_negocio/". $this->lista_negocios[$i]['idn']. "'><i class='fa  fa-trash' aria-hidden='true'></i></a> </p></td></tr>";
+            }
+            echo '</tbody></table>';
+        }
+        else
+            echo '<h4 class="alert-warning">No Existen Negocios...........................................</h4>';
+        ?>
+
+
+    </div>
+</div>
+
+<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    for($i=0;$i<count($_layoutParams['js']);$i++)
+        echo      "<script src='". $_layoutParams['js'][$i]."'></script>";
+?>

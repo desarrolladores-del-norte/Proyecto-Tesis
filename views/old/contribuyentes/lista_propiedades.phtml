@@ -1,0 +1,39 @@
+<div class="row">
+    <h3>Lista de Propiedades</h3>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-lg-12">
+        <?php
+        if (isset($this->lista_propiedades) && count($this->lista_propiedades))
+        {
+
+            echo "<table class='table table-bordered table-hover' id='Jtabla'>
+                     <thead><tr><th>Código Catastral</th><th>Valor de la Propiedad</th><th>Excepción</th><th>Dirección</th><th>Barrio</th><th>Acción</th></tr></thead><tbody>";
+            for($i=0;$i<count($this->lista_propiedades);$i++)
+            {
+                echo '<tr><td>'.$this->lista_propiedades[$i]['codigo'].'</td>'.
+                    "<td>".$this->lista_propiedades[$i]['valor']."</td>
+             <td>".$this->lista_propiedades[$i]['excepcion']."</td>
+              <td>".$this->lista_propiedades[$i]['direccion']."</td>
+              <td>".$this->lista_propiedades[$i]['barrio']."</td>
+                <td><p><a class=' hidden-print' title='Editar' href='".BASE_URL."contribuyentes/editar_propiedad/". $this->lista_propiedades[$i]['idp']. "'><i class='fa  fa-pencil' aria-hidden='true'></i></a>
+                <a class=' hidden-print' title='Cargar Cobro' href='".BASE_URL."contribuyentes/pago_propiedad/". $this->lista_propiedades[$i]['idp']. "'><i class='fa  fa-usd' aria-hidden='true'></i></a>
+                <a onclick=\"if (!confirm('Está seguro que desea eliminar el registro?')) return false;\" class=' hidden-print' title='Eliminar' href='".BASE_URL."contribuyentes/eliminar_propiedad/". $this->lista_propiedades[$i]['idp']. "'><i class='fa  fa-trash' aria-hidden='true'></i></a></p></td></tr>";
+            }
+            echo '</tbody></table>';
+        }
+        else
+            echo '<h4 class="alert-warning">No posee Propiedades...........................................</h4>';
+        ?>
+
+
+    </div>
+</div>
+
+<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    for($i=0;$i<count($_layoutParams['js']);$i++)
+        echo      "<script src='". $_layoutParams['js'][$i]."'></script>";
+?>

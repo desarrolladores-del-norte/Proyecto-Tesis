@@ -1,0 +1,81 @@
+	#content {
+        background-color: rgba(255, 25, 8, 0.308);
+       
+        border: 1px solid #c4c6ca;
+        margin: 8px auto;
+        padding: 5px 5px 0;
+        position: relative;
+        text-shadow: 0 1px 0 #fff;
+        font-size: 15px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        -moz-box-shadow: rgb(150,150,150) 5px 5px 10px;
+        -webkit-box-shadow: rgb(150,150,150) 5px 5px 10px;
+        box-shadow: rgb(150,150,150) 5px 5px 10px;
+    }
+    #cont {
+        background-color: rgba(6, 250, 250, 0.575);
+       
+        border: 1px solid #c4c6ca;
+        margin: 8px auto;
+        padding: 5px 5px 0;
+        position: relative;
+        text-shadow: 0 1px 0 #fff;
+        font-size: 15px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border-radius: 20px;
+        -moz-box-shadow: rgb(150,150,150) 5px 5px 10px;
+        -webkit-box-shadow: rgb(150,150,150) 5px 5px 10px;
+        box-shadow: rgb(150,150,150) 5px 5px 10px;
+    }
+
+    
+    .tamtex{
+        font-size: 25px;
+    
+    }
+    .texcolor{
+        color:rgb(255, 5, 5);
+        font-style: italic;
+    }
+    .cimg img:hover{
+        box-shadow: 0px 0px 10px  black;
+    }
+    
+        .tamimg img{
+        width: 130px;
+        height: 110px;}
+        .T_img{
+        width: 50px;
+        height: 50px;}
+    
+        .T_img_max{
+        width: 200px;
+        height: 250px;}
+        .pos{
+            float: right;
+    
+        }
+    
+    .adaptar{
+        width: 100%;
+    }
+    body{
+        padding: 10px;
+        margin: 10px;
+    }
+    
+    
+    .logo h1 {
+        font-family: 'Lobster', cursive;
+        color: #fff;
+        font-size: 30px;
+    
+    }
+    
+    .logo span {
+        color: #999;
+    }
+    .container11 { margin: 15px auto; position: relative; width: 290px; height: 30px; } 

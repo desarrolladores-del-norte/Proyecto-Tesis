@@ -1,0 +1,142 @@
+
+<nav class='clasein'>
+
+    <div class='container'>
+
+        <table class='table'>
+            <tr>
+                <td align='center'><img src='<?php echo $_layoutParams1['ruta_img'];?>LOGO2.png' width='70px' height='110px' alt='logo alcaldia'>
+                </td>
+                <td>
+                    <h3 align='center'>ALCALDIA DE OCOTAL</h3>
+                    <h4 align='center'>SISTEMA INTEGRAL DE PAGOS TRIBUTARIOS</h4>
+                </td>
+                <td align='center'><img src='<?php echo $_layoutParams1['ruta_img'];?>LOGO1.png' width='100px' height='70px'  alt='logo SIPT'>
+                </td>
+
+            </tr>
+
+        </table>
+
+<div class="col-lg-2 col-lg-offset-10"><h5>Factura N°: <?php if(isset($this->factura)) echo $this->factura;?></h5>
+<?php
+ $Dato='Factura N°='.$this->factura;
+
+include_once ROOT.'views'.DS.'usuarios'.DS.'phpqrcode'.DS.'generarqr.php';
+if(isset($this->estado))
+echo $this->estado;
+
+?>
+</div>
+        <div class='panel-body'>
+
+            <div class='col-xs-12 col-sm-12 col-md-5 col-lg-12'><h4 align='center'>DATOS DEL CONTRIBUYENTE</h4></div>
+
+            <br>
+            <br>
+
+
+            <table class='table'>
+                <tr>
+
+                    <th>N° de Cedula - RUC</th>
+                    <th >Nombre del Contribuyente</th>
+                    <th>Tipo de Persona</th>
+                </tr>
+                <tr style='border: inset 0pt'>
+                    <td class='col-md-3 col-lg-3' style='border: inset 0pt'><?php if(isset($this->datos['RUC'])) echo $this->datos['RUC'];?>
+                    </td>
+
+                    <td class='col-md-6 col-lg-6' style='border: inset 0pt'><?php if(isset($this->datos['nombre'])) echo $this->datos['nombre'];?>
+                    </td>
+                    <td class='col-md-3 col-lg-3' style='border: inset 0pt'><?php if(isset($this->datos['tipo_persona'])) echo $this->datos['tipo_persona'];?>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>N° de Telefono</th>
+                    <th>Direccion</th>
+                    <th>Fecha de Registro</th>
+                </tr>
+
+                <tr>
+                    <td class='col-md-3 col-lg-3' style='border: inset 0pt'><?php if(isset($this->datos['telefono'])) echo $this->datos['telefono'];else echo 'Sin Teléfono';?>
+                    </td>
+
+                    <td class='col-md-6 col-lg-6' style='border: inset 0pt'><?php if(isset($this->datos['direccion'])) echo $this->datos['direccion'];?>
+                    </td>
+                    <td class='col-md-3 col-lg-3' style='border: inset 0pt'><?php if(isset($this->datos['fecha_registro']) && count($this->datos['fecha_registro'])>0) echo $this->datos['fecha_registro']; else echo 'Sin Registro';?>
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+
+
+            <div class='col-xs-12 col-sm-12 col-md-5 col-lg-12'><h4 align='center'>Detalle de las obligaciones</h4></div>
+            <br>
+            <br>
+
+
+
+
+
+            <?= $this->datos_negocios; ?>
+
+            <table class="table col-lg-offset-8 table-condensed" style="width: 300px">
+                <tr class="active"><td>Total Bruto:</td><td>C$ <?= $this->total_pagar; ?></td></tr>
+                <tr class="success"><td>Total Deducciones:</td><td>C$ <?= $this->deducciones; ?></td></tr>
+                <tr class="warning"><td>Total Mora o Multa:</td><td>C$ <?= $this->mora; ?></td></tr>
+                <tr class="danger"><td><b>Total Neto:</b></td><td><b>C$ <?= $this->total_general; ?></b></td></tr>
+            </table>
+
+
+
+
+
+
+
+            <div class="row ">
+                <div class='col-xs-12 col-sm-12 col-md-5 col-lg-12'><h4 align='center'>Alcaldia Municipal Ocotal</h4></div></div>
+            <div class="row ">
+                <div class='col-xs-12 col-sm-12 col-md-5 col-lg-12'><h4 align='center'>Boleta de Pagos</h4></div></div>
+            <table align='center' border="1">
+                <tr style='border: inset 0pt'>
+
+                    <td><b>Nombre del Contribuyente:</b></td>
+                    <td><?php if(isset($this->datos['nombre'])) echo $this->datos['nombre'];?></td>
+                </tr>
+                <tr style='border: inset 0pt'>
+                    <td><b>Monto a pagar:</b></td>
+                    <td><?= $this->total_general; ?></td>
+                </tr>
+                <tr style='border: inset 0pt'>
+                    <td><b>Monto el letras:</b></td>
+                    <td>XXX</td>
+                </tr>
+                <tr style='border: inset 0pt'>
+                    <td><b>Concepto:</b></td>
+                    <td>Pago de Impuesto Municipales</td>
+                </tr>
+                <tr style='border: inset 0pt'>
+                    <td><b>Fecha emision:</b></td>
+                    <td><?php echo date("m/d/Y"); ?></td>
+                </tr>
+
+                <tr style='border: inset 0pt'>
+                    <td><b>Cuenta Bampro N°:</b></td>
+                    <td>**********************</td>
+
+                </tr>
+            </table>
+
+
+        </div>
+
+
+
+
+</nav>
+

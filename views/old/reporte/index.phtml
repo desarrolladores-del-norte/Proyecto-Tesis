@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Reporte de Ingresos Por Fecha</h4></div>
+            <div class="panel-body">
+                <form class="" method="post" action="reporte/reporte">
+                    <input name="pagarf" value="1" type="hidden" />
+
+
+                    <div class="input-group ">
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="todos">Todos</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="matricula">Matrícula</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="ibi">IBI</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="imi">IMI</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="retenciones">Retenciones</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="basura">Basura</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" name="rotulos">Rótulos</label>
+                    </div>
+                    <br>
+
+
+                    <div class="input-group col-lg-8">
+                        <div class="input-group-addon">Contribuyente</div>
+                        <input type="text" name="contribuyente" class="form-control" />
+                    </div>
+                    <br>
+                    <div class="input-group col-lg-8">
+                        <div class="input-group-addon">Desde</div>
+                        <input required  type="date" name="fecha1" class="form-control" />
+
+
+                        <div class="input-group-addon">Hasta</div>
+                        <input required  type="date" name="fecha2" class="form-control" />
+
+                    </div>
+
+
+
+
+                    <br>
+
+                    <input type="submit" class="btn btn-danger" value="Ver Reporte" />
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
