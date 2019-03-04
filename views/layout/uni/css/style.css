@@ -45,6 +45,7 @@ a, a:hover, a:focus {
 #container {
     width: 100%;
     height: 100%;
+    /*display: flow-root;*/
 }
 
 /* Bootstrap Modifications */
@@ -408,7 +409,7 @@ ul.sidebar-menu li a.active i {
 }
 
 .header {
-    position: fixed;
+    position: relative;
     left: 0;
     right: 0;
     z-index: 1002;
@@ -1631,7 +1632,7 @@ PANELS CONFIGURATIONS
 
 .fontawesome-list i {
 	margin-right: 8px;
-}
+
 
 /* Grid Showcase*/
 

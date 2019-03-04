@@ -8,27 +8,7 @@ class estudiantesModel extends Model
     {
         parent::__construct();
     }
-
-    public function insertarestudiante($nombre,$email,$telefono,$estado)
-    {
-
-
-        $this->_db->prepare("insert into Estudiante(nombre,email,telefono,activo) VALUES (:nombre  , :email , :telefono , :estado)")
-            ->execute(
-                array(
-                    'nombre' => $nombre,
-                    'email' => $email,
-                    'telefono' => $telefono,
-                    'estado' => $estado
-                )
-            );
-
-
-    }
-
-
-
-
+    
     public function asistir_clase($id_e)
     {
         $fecha=date("Y-m-d");

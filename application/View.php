@@ -89,9 +89,9 @@ class View{
 
       $_layoutParams=array(
         'ruta_css'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/css/',
-          'ruta_img'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/img/',
-          'ruta_js'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/js/',
-          'ruta_fuente'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/fonts/',
+          'ruta_img'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/img/',
+          'ruta_js'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/js/',
+          'ruta_fuente'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/fonts/',
           'menu'=>$menu,
           'js'=>$js
       );

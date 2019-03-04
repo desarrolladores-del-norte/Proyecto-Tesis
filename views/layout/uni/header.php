@@ -15,10 +15,13 @@
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap.css" rel="stylesheet">
+
   <!--external css-->
   <link href="<?php echo $_layoutParams['ruta_css'];?>/font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="<?php echo $_layoutParams['ruta_css'];?>style.css" rel="stylesheet">
+  <link href="<?php echo $_layoutParams['ruta_css'];?>styles.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>style-responsive.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>zabuto_calendar.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>jquery.gritter.css " rel="stylesheet">
@@ -38,7 +41,7 @@
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
     <!--header start-->
-    <header class="header black-bg">
+    <header  class="header black-bg">
   
       <div class="sidebar-toggle-box ">
         <div class="fa fa-bars tooltips " data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -235,4 +238,4 @@
      
     </header>
     <!--header end-->
-  
+     
