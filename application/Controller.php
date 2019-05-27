@@ -128,6 +128,19 @@ public function validarEmail($email)
         return true;
     }
 
-
+    protected function getPostParam($clave)
+    {
+        if(isset($_POST[$clave])){
+            return $_POST[$clave];
+        }
+    }
+    protected function getfecha($fecha)
+    {
+        if(isset($_POST[$fecha])){
+         //  $fecha=strtotime($fecha);
+           // $fecha=date("Y-m-d",$fecha);
+            return $fecha;
+        }
+    }
 
 }
