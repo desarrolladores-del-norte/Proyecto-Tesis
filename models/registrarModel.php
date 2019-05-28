@@ -1,51 +1,56 @@
 <?php
 class registrarModel extends Model
 {
-    private $carnet;
-
-
     public function __construct()
     {
         parent::__construct();
     }
-
-    public function set($atributo, $contenido)
+    public function verificarCarnet($carnet)
     {
-        $this->$atributo=$contenido;
+        $veri=$this->_db->query(
+                  "select carnet from estudiante where carnet='$carnet'"
+        );
+        if ($veri->fetch()) {
+             return true;
+         }
+         return false;
     }
-    public function get($atributo)
+    public function  verificarEmail($email)
     {
-        return $atributo;
+        $correo=$this->_db->query(
+                  "select email from estudiante where email='$email'  "
+        );
+         if ($correo->fetch()){
+             return true;
+         }
+         return false;
     }
 
-    public function insertarestudiante($carnet,$nom1,$nom2,$ap1,$ap2,$sexo,$tel,$dep,$ciudad,$email,$carrera,$pass)
+   
+    public function insertarestudiante($carnet,$pnombre,$snombre,$pape,$sape,$sexo,$num,$dep,$ciud,$email,$carrera,$pass,$FechaNac)
     {
 
-
-        $this->_db->prepare("insert into estudiante(carnet, primerNombre, segundoNombre, primerApellido, segundoApellido,
-        sexo, telefono, departamento, ciudad,email, carrera, pass) 
-        VALUES (:carenet, :nom1, :nom2, :ap1, :ap2, :sexo, :tel, :dep, :ciudad, :email , :carrera , :pass)")
+ $this->_db->prepare("insert into estudiante(carnet,primerNombre,segundoNombre,primerApellido,segundoApellido,sexo,telefono,departamento,ciudad,email,carrera,pass,FechaNac,Estado)
+  VALUES (:carnet,:pnom,:snom,:pape,:sape,:sexo,:tel,:depa,:ciu,:email,:carr,:pass,:fna ,1)")
             ->execute(
                 array(
-                    'carnet'=> $carnet,
-                    'primerNombre' => $nom1,
-                    'segundoNombre' => $nom2,
-                    'primerApellido' => $ap1,
-                    'segundoApellido' => $ap2,
+                    'carnet' => $carnet,
+                    'pnom' => $pnombre,
+                    'snom' => $snombre,
+                    'pape' => $pape,
+                    'sape' => $sape,
                     'sexo' => $sexo,
-                    'telefono' => $tel,
-                    'departamento' => $dep,
-                    'ciudad' => $ciudad,
+                    'tel' => $num,
+                    'depa' => $dep,
+                    'ciu' => $ciud,
                     'email' => $email,
-                    'carrera' => $carrera,
-                    'pass' => $pass
+                    'carr' => $carrera,
+                    'pass' => $pass,
+                    'fna' => $FechaNac
+                    
                 )
             );
-            
+     }
 
-    }
 }
-
-
-
 ?>

@@ -1,0 +1,75 @@
+
+<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    for($i=0;$i<count($_layoutParams['js']);$i++)
+        echo"<script src='". $_layoutParams['js'][$i]."'></script>";
+?>
+   
+    <div class="container redondo" id="advanced-search-form">
+    <div class="container11    text-center ">
+    <h3>
+    <div id="Error" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensaje" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+
+        <h2>Registrate</h2>  
+     <form id="form_registroProf" class="form-Registro" action="" method="post" name="form3" >
+      <input type="hidden" value="1" name="enviarRegistro" />
+     
+          <div class="form-group">
+                <label for="first-name">Primer Nombre</label>
+                <input type="text" class="form-control" placeholder="Primer Nombre" id="nameProf" name="nameProf" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="first-name">Segundo Nombre</label>
+                <input type="text" class="form-control" placeholder="Segundo Nombre" id="segNameProf" name="segNameProf"   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="first-name">Primer apellido</label>
+                <input type="text" class="form-control" placeholder="Primer Apellido" id="apeProf" name="apeProf" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="first-name">segundo apellido</label>
+                <input type="text" class="form-control" placeholder="Segundo Apellido" id="segApeProf" name="segApeProf" required   autofocus>
+            </div>
+          <div class="form-group">
+                <label for="first-name">Usuario</label>
+                <input type="text" class="form-control" placeholder="Nickname" id="user" name="user" required   autofocus>
+            </div>
+          
+            <div class="form-group">
+                <label for="education">contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1" name="pass1" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2" name="pass2" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" name=" EMAIL" required>
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+           </div>
+          
+
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_regist"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+        </form>
+    </div>
+   
+

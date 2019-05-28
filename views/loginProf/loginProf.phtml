@@ -1,0 +1,67 @@
+
+  <!-- **********************************************************************************************************************************************************
+       CONTENT login estudiante
+  *********************************************************************************************************************************************************** -->
+
+  <div class="logo text-center"><h1>Sistema de Educación Universitaria</h1></div>
+     <div id="login-page">
+    <div class="container ">
+      <form class="form-login" action="" method="post" name="form1" >
+      <input type="hidden" value="1" name="enviar" />
+        <h2 class="form-login-heading">Iniciar Sesion</h2>
+        <h3 class="text-center">Profesor</h3>
+        <div class="login-wrap">
+          <input type="text" class="form-control" placeholder="Usuario" id="users" name="users" required  autofocus
+           value="<?php if(isset($this->datos['users'])) echo $this->datos['users']; ?>"/>
+           <br>
+          <input type="password" class="form-control" placeholder="Password" id="password" name="password" required 
+          value="<?php if(isset($this->datos['password'])) echo $this->datos['password']; ?>"/> 
+          <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+            <span class="pull-right">
+            <a data-toggle="modal" href="login.html#myModal"> se le olvido Password?</a>
+            </span>
+            </label>
+          <button class="btn btn-theme btn-block" href="" type="submit" value="btnlogin">
+                 <i class="fa fa-lock"></i> ENTRAR</button>
+          <hr> 
+            <div class="container11  texcolor text-center " > 
+                <?php if(isset($this->_error))echo $this->_error; ?> 
+            </div>
+
+          <div class="registration">
+            No esta Registrado?<br/>
+            <a href="<?php echo BASE_URL.'registry';?>">
+            Crear Cuenta
+            </a>
+             
+          </div
+        </div>
+        <!-- Modal -->
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Forgot Password ?</h4>
+              </div>
+              <div class="modal-body">
+                <p>Enter your e-mail address below to reset your password.</p>
+                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+              </div>
+              <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                <button class="btn btn-theme" type="button">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal -->
+      </form>
+      
+    </div>
+   
+  </div>
+  
+
+ 

@@ -6,7 +6,8 @@ $(document).ready(function(){
      
  
  $("#btn_registrar").click(function(){
- 
+     
+   
      if( $("#pass1").val()!=$("#pass2").val() ){
          $("#Error").html("Las claves no coinciden").fadeIn(500).fadeOut(7000);
  
@@ -15,10 +16,10 @@ $(document).ready(function(){
  
  
   var idC=$("#carnetReg").val();
- $.ajax({
+    $.ajax({
      data: {"carnetReg" :idC },
      type: "POST",
-     url: "verificarCarnet",
+     url:"verificarCarnet",
      success:(function(data){
          if(data!=0){
          $("#Error").html(data).fadeIn(500).fadeOut(7000);
@@ -46,4 +47,3 @@ $(document).ready(function(){
  
  })
  })
- 
