@@ -1,8 +1,12 @@
+<?php if(isset($_layoutParams2['js']) && count($_layoutParams2['js']))
+    for($i=0;$i<count($_layoutParams2['js']);$i++)
+        echo      "<script src='". $_layoutParams2['js'][$i]."'></script>";
+?>
 
-        <!--
+   <!--
         End Fixed Navigation
         ==================================== -->
-		
+  
 		
 		
         <!--
@@ -23,7 +27,7 @@
 				<div class="carousel-inner" role="listbox">
 					
 					<!-- single slide -->
-					<div class="item active" style="background-image: url(<?php echo $_layoutParams2['ruta_img'];?>banner.jpg);">
+			<div class="item active" style="background-image: url(<?php echo $_layoutParams2['ruta_img'];?>banner.jpg);">
 						<div class="carousel-caption">
 							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Bienvenidos a <span class="color"> SACUR</span>!</h2>
 							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated">
@@ -69,8 +73,8 @@
         End Home SliderEnd
         ==================================== -->
 		
-        <!--
-        Features
+         <!--
+        iniciar sesion
         ==================================== -->
 		
 		<section id="sesion" class="features">
@@ -81,50 +85,49 @@
 						<h2>Iniciar Sesion</h2>
 						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
 					</div>
+          </div>
+          <!-- service item -->
 
-					<!-- service item -->
-					<div class="col-md-6 wow fadeInLeft" data-wow-duration="500ms">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-book fa-2x"></i>
-							</div>
-							
-							<div class="service-desc">
-							<a data-toggle="modal" href="#" data-target="#loginEstudiante">
-								<h3>Estudiante</h3>
-							</a>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-							</div>
-						</div>
-					</div>
+      <div class="row">
+           <div class="project-wrapper" class="col-xs-6">
+              <figure class="mix work-item branding">
+					      <img class="mx-auto d-block" src="<?php echo $_layoutParams2['ruta_img'];?>works/estudiante.png" alt="" class="img-responsive">
+					      <figcaption class="overlay">
+                  <a data-toggle="modal" href="#" data-target="#loginEstudiante"><i class="fa fa-eye fa-lg"></i>
+						        <h4>Inicia sesion como estudiante</h4>
+						        <p>Estudiante</p>
+                    </a>
+					      </figcaption>
+				      </figure>
+              </div>
 					<!-- end service item -->
 					
 					<!-- service item -->
-					<div class="col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
-						<div class="service-item">
-							<div class="service-icon">
-								<i class="fa fa-pencil fa-2x"></i>
-							</div>
-							<div class="service-desc">
-							<a data-toggle="modal" href="#" data-target="#loginProfesor">
-								<h3>Profesor</h3>
-								</a>
-								<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-								
-							</div>
-						</div>
-					</div>
+          
+          <div class="project-wrapper" class="col-xs-6">
+          <figure class="mix work-item branding">
+				<img src="<?php echo $_layoutParams2['ruta_img'];?>works/profesor.png" alt="" class="img-responsive">
+					<figcaption class="overlay">
+          <a data-toggle="modal" href="#" data-target="#loginProfesor"><i class="fa fa-eye fa-lg"></i>
+						<h4>Inicia sesion como profesor</h4>
+						<p>Profesor</p>
+          </a>
+					</figcaption>
+				</figure>
+        </div>
+        </div>
 					<!-- end service item -->
 					
 					
 						
-				</div>
+		
 			</div>
 		</section>
 		
         <!--
-        End Features
+        End iniciar sesion
         ==================================== -->
+		
 		
 		
         <!--
@@ -444,11 +447,11 @@
  <!-- **********************************************************************************************************************************************************
        login de Estudiante
   *********************************************************************************************************************************************************** -->
-  <form action="loginEst" method="post" name="form2" >
+  <form action="loginEst" method="post" name="form1" >
       <input type="hidden" value="1" name="enviar" />
       
-          <input type="text" class="form-control" placeholder="Usuario" id="users" name="users" required  autofocus
-           value="<?php if(isset($this->datos['users'])) echo $this->datos['users']; ?>"/>
+          <input type="text" class="form-control" placeholder="Numero de Carnet" id="carnet" name="carnet" required  autofocus
+           value="<?php if(isset($this->datos['carnet'])) echo $this->datos['carnet']; ?>"/>
            <br>
           <input type="password" class="form-control" placeholder="Password" id="password" name="password" required 
           value="<?php if(isset($this->datos['password'])) echo $this->datos['password']; ?>"/> 
@@ -458,7 +461,7 @@
             <a data-toggle="modal" href="login.html#myModal"> se le olvido Password?</a>
             </span>
             </label>
-          <button class="btn btn-theme btn-block" href="" type="submit" value="btnlogin">
+          <button class="btn btn-theme btn-block" href="" type="submit" value="btnlogin" id="btn_loginEst">
                  <i class="fa fa-lock"></i> ENTRAR</button>
           <hr> 
             <div class="container11  texcolor text-center " > 
@@ -519,7 +522,7 @@
  <!-- **********************************************************************************************************************************************************
        login de profesor
   *********************************************************************************************************************************************************** -->
-  <form action="loginProf" method="post" name="form1" >
+  <form action="loginProf" method="post" name="form2" >
       <input type="hidden" value="1" name="enviar" />
       
           <input type="text" class="form-control" placeholder="Usuario" id="users" name="users" required  autofocus
@@ -594,10 +597,7 @@
 
  <!--Contenido del model -->	
 
-<?php if(isset($_layoutParams2['js']) && count($_layoutParams2['js']))
-    for($i=0;$i<count($_layoutParams2['js']);$i++)
-        echo"<script src='". $_layoutParams2['js'][$i]."'></script>";
-?>
+
    <div class="container" id="advanced-search-form">
     <div class="container11  text-center ">
     <h3>
@@ -607,14 +607,14 @@
    </div>
  <h2>Registrate</h2>  
      <form id="form_registro" class="form-Regis" action="" method="post" name="form2" >
-      <input type="hidden" value="1" name="enviarRegis" />
+      <input type="hidden" value="1" name="enviarRegisEst" />
          <div class="form-group">
                 <label for="first-name">Carnet</label>
                 <input type="text" class="form-control" placeholder="Carnet" id="carnetReg" name="carnetReg" required   autofocus>
                 </div>
          <div class="form-group">
                   <label for="first-name">Nombres</label>
-                  <input type="text" class="form-control" placeholder=" Nombres" id="name" name="Name" required >
+                  <input type="text" class="form-control" placeholder=" Nombres" id="Name" name="Name" required >
                 </div>
          <div class="form-group">
                   <label for="last-name">Apellidos</label>
@@ -717,12 +717,6 @@
               <div class="modal-body">
 
  <!--Contenido del model -->	
-
-<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
-    for($i=0;$i<count($_layoutParams['js']);$i++)
-        echo"<script src='". $_layoutParams['js'][$i]."'></script>";
-?>
-   
     <div class="container redondo" id="advanced-search-form">
     <div class="container11    text-center ">
     <h3>
@@ -733,7 +727,7 @@
 
         <h2>Registrate</h2>  
      <form id="form_registroProf" class="form-Registro" action="" method="post" name="form3" >
-      <input type="hidden" value="1" name="enviarRegistro" />
+      <input type="hidden" value="1" name="env_regist_prof" />
      
           <div class="form-group">
                 <label for="first-name">Nombres</label>
@@ -741,7 +735,7 @@
             </div>
             <div class="form-group">
                 <label for="first-name">Apellidos</label>
-                <input type="text" class="form-control" placeholder="Apellidos" id="apeProf" name="apeProf" required   autofocus>
+                <input type="text" class="form-control" placeholder="Apellidos" id="apellidoProf" name="apellidoProf" required   autofocus>
             </div>
           <div class="form-group">
                 <label for="first-name">Usuario</label>
@@ -749,7 +743,7 @@
             </div>
              <div class="form-group">
                 <label for="first-name">carrera</label>
-                <input type="text" class="form-control" placeholder="carrera" id="car" name="car" required   autofocus>
+                <input type="text" class="form-control" placeholder="carrera" id="carrera" name="carrera" required   autofocus>
             </div>
             <div class="form-group">
                 <label for="education">contraseña</label>
@@ -782,7 +776,7 @@
           
 
             <div class="clearfix"></div>
-            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_regist"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_regist_prof"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
         </form>
     </div>
    
@@ -798,3 +792,5 @@
         <!-- fin del modal -->
     
 		</section>
+
+

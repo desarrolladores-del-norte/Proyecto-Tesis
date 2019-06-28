@@ -33,7 +33,7 @@
 		<!-- Essential jQuery Plugins
 		================================================== -->
 		<!-- Main jQuery -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-1.11.1.min.js"></script>
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-1.11.1.min"></script>
 		<!-- Single Page Nav -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.singlePageNav.min.js"></script>
 		<!-- Twitter Bootstrap -->
@@ -50,11 +50,6 @@
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.appear.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>main.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>zabuto_calen"></script>
-		<!-- Contact form validation -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
-		<!-- Google Map -->
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<!-- jquery easing -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.easing.min.js"></script>
 		<!-- jquery easing -->

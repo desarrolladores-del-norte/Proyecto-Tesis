@@ -6,30 +6,31 @@ $(document).ready(function(){
      
  
  $("#btn_registrar").click(function(){
-     
+   
    
      if( $("#pass1").val()!=$("#pass2").val() ){
          $("#Error").html("Las claves no coinciden").fadeIn(500).fadeOut(7000);
- 
+         console.log("pasa");
     return false;
  }
+
  
- 
-  var idC=$("#carnetReg").val();
+ var idC=$("#carnetReg").val();
     $.ajax({
-     data: {"carnetReg" :idC },
-     type: "POST",
      url:"verificarCarnet",
+     data: {"carnetReg" :idC },
+     type: "POST",  
      success:(function(data){
+        console.log("carnet");
          if(data!=0){
          $("#Error").html(data).fadeIn(500).fadeOut(7000);
          return false;
      }
      })
- });
-  
+ });/*
+
  
- var idE=$("#email").val();
+ /*var idE=$("#email").val();
  $.ajax({
      data: {"EMAIL" :idE },
      type: "POST",
@@ -41,9 +42,10 @@ $(document).ready(function(){
          return false;
      }
      })
- });
+ });*/
  
  
  
  })
  })
+

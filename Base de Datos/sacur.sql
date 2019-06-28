@@ -105,8 +105,10 @@ CREATE TABLE IF NOT EXISTS `sacur`.`profesor` (
   `apellidos` VARCHAR(100) NOT NULL,
   `usuario` VARCHAR(50) NOT NULL,
   `pass_prof` VARCHAR(30) NOT NULL,
+   `sexo` VARCHAR(2) NOT NULL,
   `emailProf` VARCHAR(50) NOT NULL,
   `carrera` VARCHAR(50) NULL,
+   `Estado` INT NOT NULL,
   PRIMARY KEY (`idprofesor`));
 
 

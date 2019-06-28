@@ -1093,7 +1093,7 @@ PANELS CONFIGURATIONS
 
 /* Weather 1 */
 .weather {
-	background: url(http://localhost:8080/sisuni3/public/img//weather.jpg) no-repeat center top;
+	background: url(http://localhost:8080/Proyecto-Tesis/public/img/weather.jpg) no-repeat center top;
 	text-align: center;
 	background-position: center center;
 }

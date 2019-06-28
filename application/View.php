@@ -112,7 +112,7 @@ class View{
   }
 // construccion  de la pagina de inicio
  public function render($vista)
-{// menu 
+ {// menu 
  $menu = array(
    array(
      'id' => 'Home',
@@ -128,10 +128,15 @@ class View{
              'id' => 'contac',
             'titulo' => 'contactos',
             'enlace' => BASE_URL."#footer"
-                                   ),                            
-    );
+                                   ),                         
+                                );
+                               
     
-   
+    $js=array();
+    if(count($this->_js))
+    {
+        $js=$this->_js;
+    }
 
       
  $_layoutParams2 = array(
@@ -142,7 +147,8 @@ class View{
           'ruta_public_js' => BASE_URL . 'public/js/',
           'ruta_public_img' => BASE_URL . 'public/img/',
           
-          'menu' => $menu
+          'menu'=>$menu,
+          'js'=>$js
                        );
 
 
