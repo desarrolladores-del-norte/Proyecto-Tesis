@@ -173,6 +173,7 @@
 
  .container11 { margin: 5px auto; position: relative; width: 290px; height: 10px; } 
  
+<<<<<<< HEAD
  .col-centrada{
      justify-content: center;
  }
@@ -192,4 +193,6 @@
 .cimg img:hover{
     box-shadow: 0px 0px 10px  black;
 }
+=======
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
  

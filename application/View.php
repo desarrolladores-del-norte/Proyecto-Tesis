@@ -112,7 +112,11 @@ class View{
   }
 // construccion  de la pagina de inicio
  public function render($vista)
+<<<<<<< HEAD
  {// menu 
+=======
+{// menu 
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
  $menu = array(
    array(
      'id' => 'Home',
@@ -128,6 +132,7 @@ class View{
              'id' => 'contac',
             'titulo' => 'contactos',
             'enlace' => BASE_URL."#footer"
+<<<<<<< HEAD
                                    ),                         
                                 );
                                
@@ -137,6 +142,12 @@ class View{
     {
         $js=$this->_js;
     }
+=======
+                                   ),                            
+    );
+    
+   
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
 
       
  $_layoutParams2 = array(
@@ -147,8 +158,12 @@ class View{
           'ruta_public_js' => BASE_URL . 'public/js/',
           'ruta_public_img' => BASE_URL . 'public/img/',
           
+<<<<<<< HEAD
           'menu'=>$menu,
           'js'=>$js
+=======
+          'menu' => $menu
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
                        );
 
 

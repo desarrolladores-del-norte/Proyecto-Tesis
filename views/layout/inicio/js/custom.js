@@ -109,7 +109,11 @@ $(document).ready(function(){
         }
     });
     $("#back-top").click(function () {
+<<<<<<< HEAD
         $("html,body").stop().animate({
+=======
+        $("html, body").stop().animate({
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
             scrollTop: 0
         }, 1500, "easeInOutExpo")
     });

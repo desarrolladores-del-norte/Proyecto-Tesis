@@ -3,10 +3,17 @@
         echo      "<script src='". $_layoutParams2['js'][$i]."'></script>";
 ?>
 
+<<<<<<< HEAD
    <!--
         End Fixed Navigation
         ==================================== -->
   
+=======
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+		
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
 		
 		
         <!--
@@ -27,7 +34,11 @@
 				<div class="carousel-inner" role="listbox">
 					
 					<!-- single slide -->
+<<<<<<< HEAD
 			<div class="item active" style="background-image: url(<?php echo $_layoutParams2['ruta_img'];?>banner.jpg);">
+=======
+					<div class="item active" style="background-image: url(<?php echo $_layoutParams2['ruta_img'];?>banner.jpg);">
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
 						<div class="carousel-caption">
 							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Bienvenidos a <span class="color"> SACUR</span>!</h2>
 							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated">
@@ -73,8 +84,13 @@
         End Home SliderEnd
         ==================================== -->
 		
+<<<<<<< HEAD
          <!--
         iniciar sesion
+=======
+        <!--
+        Features
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
         ==================================== -->
 		
 		<section id="sesion" class="features">
@@ -85,6 +101,7 @@
 						<h2>Iniciar Sesion</h2>
 						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
 					</div>
+<<<<<<< HEAD
           </div>
           <!-- service item -->
 
@@ -92,6 +109,15 @@
            <div class="project-wrapper" class="col-xs-6">
               <figure class="mix work-item branding">
 					      <img class="mx-auto d-block" src="<?php echo $_layoutParams2['ruta_img'];?>works/estudiante.png" alt="" class="img-responsive">
+=======
+
+					<!-- service item -->
+
+          <div class="container">
+           <div class="project-wrapper" class="col-md-2 col-md-offset-5">
+              <figure class="mix work-item branding">
+					      <img cclass="mx-auto d-block" src="<?php echo $_layoutParams2['ruta_img'];?>works/estudiante.png" alt="" class="img-responsive">
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
 					      <figcaption class="overlay">
                   <a data-toggle="modal" href="#" data-target="#loginEstudiante"><i class="fa fa-eye fa-lg"></i>
 						        <h4>Inicia sesion como estudiante</h4>
@@ -104,12 +130,21 @@
 					
 					<!-- service item -->
           
+<<<<<<< HEAD
           <div class="project-wrapper" class="col-xs-6">
           <figure class="mix work-item branding">
 				<img src="<?php echo $_layoutParams2['ruta_img'];?>works/profesor.png" alt="" class="img-responsive">
 					<figcaption class="overlay">
           <a data-toggle="modal" href="#" data-target="#loginProfesor"><i class="fa fa-eye fa-lg"></i>
 						<h4>Inicia sesion como profesor</h4>
+=======
+          <div class="project-wrapper" class="col-md-2 col-md-offset-5">
+          <figure class="mix work-item branding">
+					<img src="<?php echo $_layoutParams2['ruta_img'];?>works/profesor.png" alt="" class="img-responsive">
+					<figcaption class="overlay">
+          <a data-toggle="modal" href="#" data-target="#loginProfesor"><i class="fa fa-eye fa-lg"></i>
+						<h4>Inicia sesion como prfesor</h4>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
 						<p>Profesor</p>
           </a>
 					</figcaption>
@@ -120,16 +155,27 @@
 					
 					
 						
+<<<<<<< HEAD
 		
+=======
+				</div>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
 			</div>
 		</section>
 		
         <!--
+<<<<<<< HEAD
         End iniciar sesion
         ==================================== -->
 		
 		
 		
+=======
+        End Features
+        ==================================== -->
+		
+		
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
         <!--
         inicio metodo ingreso
         ==================================== -->
@@ -447,11 +493,19 @@
  <!-- **********************************************************************************************************************************************************
        login de Estudiante
   *********************************************************************************************************************************************************** -->
+<<<<<<< HEAD
   <form action="loginEst" method="post" name="form1" >
       <input type="hidden" value="1" name="enviar" />
       
           <input type="text" class="form-control" placeholder="Numero de Carnet" id="carnet" name="carnet" required  autofocus
            value="<?php if(isset($this->datos['carnet'])) echo $this->datos['carnet']; ?>"/>
+=======
+  <form action="loginEst" method="post" name="form2" >
+      <input type="hidden" value="1" name="enviar" />
+      
+          <input type="text" class="form-control" placeholder="Usuario" id="users" name="users" required  autofocus
+           value="<?php if(isset($this->datos['users'])) echo $this->datos['users']; ?>"/>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
            <br>
           <input type="password" class="form-control" placeholder="Password" id="password" name="password" required 
           value="<?php if(isset($this->datos['password'])) echo $this->datos['password']; ?>"/> 
@@ -461,7 +515,11 @@
             <a data-toggle="modal" href="login.html#myModal"> se le olvido Password?</a>
             </span>
             </label>
+<<<<<<< HEAD
           <button class="btn btn-theme btn-block" href="" type="submit" value="btnlogin" id="btn_loginEst">
+=======
+          <button class="btn btn-theme btn-block" href="" type="submit" value="btnlogin">
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
                  <i class="fa fa-lock"></i> ENTRAR</button>
           <hr> 
             <div class="container11  texcolor text-center " > 
@@ -522,7 +580,11 @@
  <!-- **********************************************************************************************************************************************************
        login de profesor
   *********************************************************************************************************************************************************** -->
+<<<<<<< HEAD
   <form action="loginProf" method="post" name="form2" >
+=======
+  <form action="loginProf" method="post" name="form1" >
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
       <input type="hidden" value="1" name="enviar" />
       
           <input type="text" class="form-control" placeholder="Usuario" id="users" name="users" required  autofocus
@@ -597,7 +659,14 @@
 
  <!--Contenido del model -->	
 
+<<<<<<< HEAD
 
+=======
+<?php if(isset($_layoutParams2['js']) && count($_layoutParams2['js']))
+    for($i=0;$i<count($_layoutParams2['js']);$i++)
+        echo"<script src='". $_layoutParams2['js'][$i]."'></script>";
+?>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
    <div class="container" id="advanced-search-form">
     <div class="container11  text-center ">
     <h3>
@@ -607,14 +676,22 @@
    </div>
  <h2>Registrate</h2>  
      <form id="form_registro" class="form-Regis" action="" method="post" name="form2" >
+<<<<<<< HEAD
       <input type="hidden" value="1" name="enviarRegisEst" />
+=======
+      <input type="hidden" value="1" name="enviarRegis" />
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
          <div class="form-group">
                 <label for="first-name">Carnet</label>
                 <input type="text" class="form-control" placeholder="Carnet" id="carnetReg" name="carnetReg" required   autofocus>
                 </div>
          <div class="form-group">
                   <label for="first-name">Nombres</label>
+<<<<<<< HEAD
                   <input type="text" class="form-control" placeholder=" Nombres" id="Name" name="Name" required >
+=======
+                  <input type="text" class="form-control" placeholder=" Nombres" id="name" name="Name" required >
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
                 </div>
          <div class="form-group">
                   <label for="last-name">Apellidos</label>
@@ -706,6 +783,7 @@
         <!-- fin del modal -->
   
     <!-- Modal de registrar Profesor-->
+<<<<<<< HEAD
 
 <div class="modal fade bd-example-modal-lg" id="registroProfesor" tabindex="-1" role="dialog" aria-labelleby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -794,3 +872,97 @@
 		</section>
 
 
+=======
+
+<div class="modal fade bd-example-modal-lg" id="registroProfesor" tabindex="-1" role="dialog" aria-labelleby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content   ">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">REGISTRO PROFESOR</h4>
+              </div>
+              <div class="modal-body">
+
+ <!--Contenido del model -->	
+
+<?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    for($i=0;$i<count($_layoutParams['js']);$i++)
+        echo"<script src='". $_layoutParams['js'][$i]."'></script>";
+?>
+   
+    <div class="container redondo" id="advanced-search-form">
+    <div class="container11    text-center ">
+    <h3>
+    <div id="Error" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensaje" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+
+        <h2>Registrate</h2>  
+     <form id="form_registroProf" class="form-Registro" action="" method="post" name="form3" >
+      <input type="hidden" value="1" name="enviarRegistro" />
+     
+          <div class="form-group">
+                <label for="first-name">Nombres</label>
+                <input type="text" class="form-control" placeholder="Nombres" id="nameProf" name="nameProf" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="first-name">Apellidos</label>
+                <input type="text" class="form-control" placeholder="Apellidos" id="apeProf" name="apeProf" required   autofocus>
+            </div>
+          <div class="form-group">
+                <label for="first-name">Usuario</label>
+                <input type="text" class="form-control" placeholder="Nickname" id="user" name="user" required   autofocus>
+            </div>
+             <div class="form-group">
+                <label for="first-name">carrera</label>
+                <input type="text" class="form-control" placeholder="carrera" id="car" name="car" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="education">contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1" name="pass1" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2" name="pass2" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" name=" EMAIL" required>
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+           </div>
+          
+
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_regist"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+        </form>
+    </div>
+   
+
+   <!--Fin del Contenido del model -->	
+ </div>
+  </div>
+              <div class="modal-footer">
+
+              </div>
+            </div>
+          </div>
+        <!-- fin del modal -->
+    
+		</section>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42

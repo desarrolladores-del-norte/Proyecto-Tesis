@@ -46,9 +46,14 @@
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css'];?>miestilo.css">
         
 
+<<<<<<< HEAD
 		<!-- Modernizer Script for old Browsers   -->
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>modernizr-2.6.2.min.js"></script>
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.min.js"></script>
+=======
+		<!-- Modernizer Script for old Browsers -->
+		<script src="<?php echo $_layoutParams2['ruta_js'];?>modernizr-2.6.2.min.js"></script>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
     </head>
     <body id="body">
 	

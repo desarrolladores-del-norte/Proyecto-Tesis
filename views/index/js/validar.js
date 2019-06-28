@@ -6,7 +6,11 @@ $(document).ready(function(){
      
  
  $("#btn_registrar").click(function(){
+<<<<<<< HEAD:views/index/js/validar.js
    
+=======
+     
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42:views/registrar/js/validar.js
    
      if( $("#pass1").val()!=$("#pass2").val() ){
          $("#Error").html("Las claves no coinciden").fadeIn(500).fadeOut(7000);
@@ -15,11 +19,20 @@ $(document).ready(function(){
  }
 
  
+<<<<<<< HEAD:views/index/js/validar.js
  var idC=$("#carnetReg").val();
     $.ajax({
      url:"verificarCarnet",
      data: {"carnetReg" :idC },
      type: "POST",  
+=======
+ 
+  var idC=$("#carnetReg").val();
+    $.ajax({
+     data: {"carnetReg" :idC },
+     type: "POST",
+     url:"verificarCarnet",
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42:views/registrar/js/validar.js
      success:(function(data){
         console.log("carnet");
          if(data!=0){
@@ -48,4 +61,7 @@ $(document).ready(function(){
  
  })
  })
+<<<<<<< HEAD:views/index/js/validar.js
 
+=======
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42:views/registrar/js/validar.js
