@@ -1,71 +1,122 @@
 <?php
 class indexController extends Controller
 {
+
     private $_login;
  public function __construct()
  {
  parent::__construct();
- $this->_login=$this->loadModel('login');
+ $this->_login=$this->loadModel('inicio');
  }
 
 public function index()
     {
-         /*if (Session::get('autenticado')) 
-        {
-      $this->_view->renderlon('index');
-    }*/
+         $this->_view->titulo = 'SACUR';
+         $this->_view->setJs(array('validar'));
+        $this->_view->setJs(array("validarLogin"));
+        $this->_view->render('index');
         
-        $this->_view->titulo = 'Iniciar Sesion';
-       
-      if($this->getInt('enviar')==1){
-          $this->_view->datos=$_POST;
-           if(!$this->getAlphaNum('usuario')){
-               $this->_view->_error='Deve introducir el nombre de usuario';
-               $this->_view->renderizar('index'); 
-               exit;
-           }
-            if(!$this-> getSql('password')){
-               $this->_view->_error='Deve introducir la contrase&ntilde;a de usuario';
-               $this->_view->renderizar('index');
-               exit; 
-           }
-          $row=$this->_login->getUsuario(
-              $this->getAlphaNum('usuario'),
-              $this->getSql('password')
-         );
+// registrar estudiante
+        if($this->getInt('enviarRegisEst')==1){
+            $this->_view->datos=$_POST;
+              $this->_login->insertarestudiante(
+                   
+                    $this->getsql('carnetReg'),
+                    $this->getsql('Name'),
+                    $this->getsql('apellido'), 
+                    $this->getsql('genero'),
+                    $this->getsql('number'),
+                    $this->getsql('departamento'),
+                    $this->getsql('ciud'),
+                    $this->getPostParam('EMAIL'),
+                    $this->getsql('carrera'),
+                    $this->getsql('pass2'),
+                    $this->getsql('fnac') 
+                    );
+              } //fin del if enviarRegisEst
+      
+    
+                // Registro Profesor
+     if($this->getInt('env_regist_prof')==1){
+        $this->_view->datos=$_POST;
+         
 
-         if(!$row){
-              $this->_view->_error='Usuario y/o contrase&ntilde;a incorrecto';
-               $this->_view->renderizar('index');
-               exit; 
-         } 
-        if($row['estado'] !=1){
-            $this->_view->_error='Este usuario no esta habilitado';
-               $this->_view->renderizar('index');
-               exit; 
-        } 
-               Session::set('autenticado', true);
-            //Session::set('level', $row['usuario']);
-            Session::set('usuario', $row['usuario']);
-           // Session::set('id_usuario', $row['id']);
+        $this->_login->insertarProfesor(
+               
+                $this->getsql('nameProf'),
+                $this->getsql('apellidoProf'),
+                $this->getsql('user'), 
+                $this->getsql('pass2'),
+                $this->getsql('genero'),
+                $this->getPostParam('EMAIL'),
+                $this->getsql('carrera')
+               
+                );
+              } 
+           
             
-             $this->redireccionar('student');   //pasar la siguiente vista si esta logiado          
-          }
-          $this->_view->renderizar('index');
-     }
-
-
-     public function cerrar()
+             
+  
+    } 
+      //fin de la funcion index
+           //login estudiante
+    
+public function cerrar()
      {
-        
-    Session::destroy();
-        $this->renderizar('index');
+         Session::destroy();
+        $this->render('index');
      }
- 
+  
+public function verificarCarnet()
+     {
+         if($this->_login->verificarCarnet($this->getsql('carnetReg')))
+             echo "El carnet ya existe";
+         else
+             echo '0';
+     }
 
+     
+     
+public function verificarEmail()
+     {
+         if($this->_login->verificarEmail($this->getsql('EMAIL')))
+             echo "El Correo ya existe";
+         else
+             echo '0'; 
+            
+     }
+public function verificaruser()
+     {
+         if($this->_login-> verificaruser($this->getsql('user')))
+             echo "El usuario ya existe";
+         else
+             echo '0';
+     }
+     
+public function verificarEmailp()
+     {
+         if($this->_login->verificarEmailp($this->getPostParam('EMAIL')))
+             echo "El Correo ya existe";
+         else
+             echo '0';
+     }
+    
+ //funcion login de estudiante
+ public function logEst(){
+     if  ($this->_login->getEstudiante(
+        $this->getsql('carnet'),
+        $this->getSql('password')))   
+         {
+            echo '0';
+         }
+       else
+        echo"carnet y contraseña invalidas";
+    }
 
+  
 
-}//fin de la clase indexController
+}
+
+//fin de la clase indexController
 ?>
- 
  

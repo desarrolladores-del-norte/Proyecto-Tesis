@@ -1,40 +1,347 @@
+<?php if(isset($_layoutParams2['js']) && count($_layoutParams2['js']))
+    for($i=0;$i<count($_layoutParams2['js']);$i++)
+        echo      "<script src='". $_layoutParams2['js'][$i]."'></script>";
+?>
 
-  <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
+   <!--
+        End Fixed Navigation
+        ==================================== -->
+  
+		
+		
+        <!--
+        Home Slider
+        ==================================== -->
+		
+		<section id="slider">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			
+				<!-- Indicators bullet -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				</ol>
+				<!-- End Indicators bullet -->				
+				
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					
+					<!-- single slide -->
+			<div class="item active" style="background-image: url(<?php echo $_layoutParams2['ruta_img'];?>banner.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Bienvenidos a <span class="color"> SACUR</span>!</h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated">
+							 UNAN-LEON.</h3>
+							<p data-wow-duration="1000ms" class="wow slideInRight animated">Sistema De Educacion Universitaria</p>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- end single slide -->
+					
+					<!-- single slide -->
+				<div class="item" style="background-image: url(<?php echo $_layoutParams2['ruta_img'];?>banner.jpg);">
+						<div class="carousel-caption">
+							<h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Bienvenidos a <span class="color"> SACUR</span>!</h2>
+							<h3 data-wow-duration="1000ms" class="wow slideInLeft animated">
+							 UNAN-LEON.</h3>
+							<p data-wow-duration="1000ms" class="wow slideInRight animated">Sistema De Educacion Universitaria</p>
+							
+							<ul class="social-links text-center">
+								<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+								<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+							</ul>
+						</div>
+					
+					</div>
+					<!-- end single slide -->
+					
+				</div>
+				<!-- End Wrapper for slides -->
+				
+			</div>
+		</section>
+		
+        <!--
+        End Home SliderEnd
+        ==================================== -->
+		
+     <!-- iniciar sesion
+     ==================================== -->
+      
+		
+     <section id="sesion" class="features">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+						<h2>Iniciar Sesion</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+
+          <!-- iniciar sesion -->
+          <div id="services">
+      <div class="container">
+        <div class="row">
+        
+        <a data-toggle="modal" href="#" data-target="#loginEstudiante">
+          <div class="col-lg-6">
+          <div class="box wow fadeInLeft ">
+              <div class="service-icon"><i class="fa fa-book fa-4x"></i></div>
+             
+              <h4 class="title">Estudiante</h4>
+              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident etiro rabeta lingo.</p>
+            
+            </div>
+          </div>
+          </a>
+          <a data-toggle="modal" href="#" data-target="#loginProfesor">
+          <div class="col-lg-6">
+            <div class="box wow fadeInRight">
+              <div class="service-icon"><i class="fa fa-pencil fa-4x"></i></div>
+              <h4 class="title">Profesor</h4>
+              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata nodera clas.</p>
+            </div>
+          </div>  
+           </a>
+      </div>
+     </div>
+</div>
+
+</div> 
+     </div>
+		</section>
+ 
+    
+		
+        <!--
+        End iniciar sesion
+        ==================================== -->
+		
+		
+        <!--
+        inicio metodo ingreso
+        ==================================== -->
+		
+		<section id="works" class="works clearfix">
+			<div class="container">
+				<div class="row">
+				    
+					<div class="sec-title text-center">
+						<h2>MÈTODOS DE INGRESO A SACUR</h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title ">
+						<div class="panel panel-default">
+                    <div class="panel-heading"><p class=" text-center">Para poder acceder/ingresar a sacur requiere lo siguiente:</p></div>
+                   <div class="panel-body">
+				   <ul class="list-unstyled lead ">
+							<li><i class="fa fa-angle-double-right"></i>&nbsp; Ser Estudiante activo de UNAN-León</li>
+							<li><i class="fa fa-angle-double-right"></i>&nbsp; Ser parte del personal Docente y administractivo de  UNAN-León </li>
+
+						</ul>
+                  </div>
+                  </div>
+                      
+						 </div>
+             </section>
+					<!-- galeria de imagenes-->
+				
+		
+        <!--
+        End Our Works
+        ==================================== -->
+		
+        <!--
+        Meet Our Team
+        ==================================== -->		
+		
+		s
+		
+        <!--
+        End Meet Our Team
+        ==================================== -->
+		
+		<!--
+        Some fun facts
+        ==================================== -->		
+		
+		<section id="facts" class="facts">
+			<div class="parallax-overlay">
+				<div class="container">
+					<div class="row number-counters">
+						
+						<div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+							<h2>Some Fun Facts</h2>
+							<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+						</div>
+						
+						<!-- first count item -->
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+							<div class="counters-item">
+								<i class="fa fa-clock-o fa-3x"></i>
+								<strong data-to="3200">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Hours of Work</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+							<div class="counters-item">
+								<i class="fa fa-users fa-3x"></i>
+								<strong data-to="120">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Satisfied Clients</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+							<div class="counters-item">
+								<i class="fa fa-rocket fa-3x"></i>
+								<strong data-to="360">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p> Projects Delivered </p>
+							</div>
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+							<div class="counters-item">
+								<i class="fa fa-trophy fa-3x"></i>
+								<strong data-to="6454">0</strong>
+								<!-- Set Your Number here. i,e. data-to="56" -->
+								<p>Awards Won</p>
+							</div>
+						</div>
+						<!-- end first count item -->
+				
+					</div>
+				</div>
+			</div>
+		</section>
+		
+        <!--
+        End Some fun facts
+        ==================================== -->
+		
+		
+		<!--
+        Contact Us
+        ==================================== -->		
+		
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="row mb50">
+				
+					<div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
+						<h2>Reportanos un problema </h2>
+						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+					</div>
+					
+					<div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
+					</div>
+					
+					<!-- contact address -->
+					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 wow fadeInLeft animated" data-wow-duration="500ms">
+						<div class="contact-address">
+							<h3>Cras at ultrices erat, sed vulputate!</h3>
+							<p>2345 Setwant natrer, 1234,</p>
+							<p>Washington. United States.</p>
+							<p>(401) 1234 567</p>
+						</div>
+					</div>
+					<!-- end contact address -->
+					
+					<!-- contact form -->
+					<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
+						<div class="contact-form">
+							<h3>Say hello!</h3>
+							<form action="#" id="contact-form">
+								<div class="input-group name-email">
+									<div class="input-field">
+										<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+									</div>
+									<div class="input-field">
+										<input type="email" name="email" id="email_general" placeholder="Email" class="form-control">
+									</div>
+								</div>
+								<div class="input-group">
+									<textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+								</div>
+								<div class="input-group">
+									<input type="submit" id="form-submit" class="pull-right" value="Send message">
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- end contact form -->
+					
+					<!-- footer social links -->
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
+						<ul class="footer-social">
+							<li><a href="https://www.behance.net/Themefisher"><i class="fa fa-behance fa-2x"></i></a></li>
+							<li><a href="https://www.twitter.com/Themefisher"><i class="fa fa-twitter fa-2x"></i></a></li>
+							<li><a href="https://dribbble.com/themefisher"><i class="fa fa-dribbble fa-2x"></i></a></li>
+							<li><a href="https://www.facebook.com/Themefisher"><i class="fa fa-facebook fa-2x"></i></a></li>
+						</ul>
+					</div>
+					<!-- end footer social links -->
+					
+				</div>
+			</div>
+			
+		
+        <!--  End Contact Us
+		==================================== -->
+			 <!-- Modal  del Estudiante-->
+
+			 <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="loginEstudiante" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">INICIAR SESION ESTUDIANTE</h4>
+              </div>
+              <div class="modal-body">
+
+ <!-- **********************************************************************************************************************************************************
+       login de Estudiante
   *********************************************************************************************************************************************************** -->
-
-  <div class="logo text-center"><h1>Sistema de Educación Universitaria</h1></div>
-     <div id="login-page">
-    <div class="container ">
-      <form class="form-login" action="" method="post" name="form1" >
-      <input type="hidden" value="1" name="enviar" />
-        <h2 class="form-login-heading">Iniciar Sesion</h2>
-        <div class="login-wrap">
-          <input type="text" class="form-control" placeholder="User ID" id="username" name="usuario" required  autofocus 
-          value="<?php if(isset($this->datos['usuario'])) echo $this->datos['usuario']; ?>"/>
-          <br>
-          <input type="password" class="form-control" placeholder="Password" id="password" name="password" required 
-          value="<?php if(isset($this->datos['pass'])) echo $this->datos['pass']; ?>"/> 
+  <form id="form_log_est" class="form-Regis" action="" method="post" name="formlogEst">
+  <input type="hidden" value="1" name="enviar"/>
+      
+   <input type="text" class="form-control" placeholder="Numero de Carnet" id="carnet" name="carnet"autofocus required />
+           <br>
+   <input type="password" class="form-control" placeholder="Password" id="password" name="password" required /> 
           <label class="checkbox">
             <input type="checkbox" value="remember-me"> Remember me
-            <span class="pull-right">
+            <span class="pull-right credit">
             <a data-toggle="modal" href="login.html#myModal"> se le olvido Password?</a>
             </span>
             </label>
-          <button class="btn btn-theme btn-block" href="" type="submit" value="enviar">
+          <button class="btn btn-theme btn-block"  type="submit" id="btn_log_est">
                  <i class="fa fa-lock"></i> ENTRAR</button>
           <hr> 
-            <div class="container11  texcolor text-center " > 
-                <?php if(isset($this->_error))echo $this->_error; ?> 
-            </div>
-
-          <div class="registration">
-            No esta Registrado?<br/>
-            <a class="" href="registrar">
-              Crear cuenta
-              </a>
+            <div id="Errorlog"  class="container11  texcolor text-center tamtex " > 
+           <?php if(isset($this->_error))echo $this->_error; ?>
+          
           </div>
+               
+<br>
+          <div class="credit text-center ">
+           <h5> No esta Registrado?<br/>
+      <a data-toggle="modal" href="#" data-target="#registroEstudiante">
+			<i class="fa fa-pencil"></i> &nbsp;Crear Cuenta</a>
+     
+</h5>
         </div>
+             
+
         <!-- Modal -->
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
           <div class="modal-dialog">
@@ -56,10 +363,300 @@
         </div>
         <!-- modal -->
       </form>
-      
-    </div>
    
   </div>
-  
+   </div>
+              <div class="modal-footer">
 
- 
+              </div>
+            </div>
+          </div>
+
+        <!-- fin del modal estudiante -->
+		
+	 <!-- Modal  del profesor-->
+
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="loginProfesor" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">INICIAR SESION PROFESOR</h4>
+              </div>
+              <div class="modal-body">
+
+ <!-- **********************************************************************************************************************************************************
+       login de profesor
+  *********************************************************************************************************************************************************** -->
+  <form action="" method="post" name="form2" id="form_log_prof">
+      <input type="hidden" value="1" name="enviarp" />
+      
+          <input type="text" class="form-control" placeholder="Usuario" id="users" name="users" required  autofocus
+           value="<?php if(isset($this->datos['users'])) echo $this->datos['users']; ?>"/>
+           <br>
+          <input type="password" class="form-control" placeholder="Password" id="password" name="password" required 
+          value="<?php if(isset($this->datos['password'])) echo $this->datos['password']; ?>"/> 
+          <label class="checkbox">
+            <input type="checkbox" value="remember-me"> Remember me
+            <span class="pull-right credit">
+            <a data-toggle="modal" href="login.html#myModalp"> se le olvido Password?</a>
+            </span>
+            </label>
+          <button class="btn btn-theme btn-block" href="" type="submit" value="btnlogin">
+                 <i class="fa fa-lock"></i> ENTRAR</button>
+          <hr> 
+            <div class="container11  texcolor text-center " id="Errologp"> 
+                <?php if(isset($this->_error))echo $this->_error; ?> 
+            </div>
+
+          <div class="credit text-center ">
+           <h5> No esta Registrado?<br/>
+            <a href="<?php echo BASE_URL.'registry';?>">
+			<i class="fa fa-pencil"></i> &nbsp;Crear Cuenta</a>
+</h5>
+        </div>
+             
+
+        <!-- Modal -->
+        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModalp" class="modal fade">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Forgot Password ?</h4>
+              </div>
+              <div class="modal-body">
+                <p>Enter your e-mail address below to reset your password.</p>
+                <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+              </div>
+              <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+                <button class="btn btn-theme" type="button">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- modal -->
+      </form>
+   
+  </div>
+   </div>
+              <div class="modal-footer">
+
+              </div>
+            </div>
+          </div>
+        
+        <!-- fin del modal profesor -->
+
+
+	 <!-- Modal de registrar Estudiante-->
+
+<div class="modal fade bd-example-modal-lg" id="registroEstudiante" tabindex="-1" role="dialog" aria-labelleby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content   ">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">REGISTRO ESTUDIANTE</h4>
+              </div>
+              <div class="modal-body">
+
+ <!--Contenido del model -->	
+
+
+   <div class="container" id="advanced-search-form">
+    <div class="container11  text-center ">
+    <h3>
+    <div id="Error" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensaje" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+ <h2>Registrate</h2>  
+     <form id="form_registro" class="form-Regis" action="" method="post" name="form2" >
+      <input type="hidden" value="1" name="enviarRegisEst" />
+         <div class="form-group">
+                <label for="first-name">Carnet</label>
+                <input type="text" class="form-control" placeholder="Carnet" id="carnetReg" name="carnetReg" required   autofocus>
+                </div>
+         <div class="form-group">
+                  <label for="first-name">Nombres</label>
+                  <input type="text" class="form-control" placeholder=" Nombres" id="Name" name="Name" required >
+                </div>
+         <div class="form-group">
+                  <label for="last-name">Apellidos</label>
+                  <input type="text" class="form-control " placeholder=" Apellidos" id="apellido"  name="apellido" required>
+               </div>
+        <div class="form-group">
+                 <label for="number">Numero de teléfono</label>
+                 <input type="number" class="form-control" placeholder="Numero de teléfono" id="number" name="number" required>
+              </div>
+        <div class="form-group">
+               <p>
+                <label for="departamento">¿De que departamento resides?</label><br/>
+                 <select  class="form-control" name="departamento" id="pais">
+                   <option value="Managua">Managua</option>
+                   <option value="Masaya">Masaya</option> 
+                   <option value="Granada">Granada</option>
+                   <option value="Carazo">Carazo</option>
+                   <option value="Rivas">Rivas</option>  
+                   <option value="Chinandega">Chinandega</option>       
+                   <option value="Leon">Leon</option>
+                   <option value="Nueva segovia">Nueva Segovia</option>
+                   <option value="Madriz">Madriz</option>  
+                   <option value="Esteli">Esteli</option>
+                   <option value="Jinotega">Jinotega</option>
+                   <option value="Matagalpa">Matagalpa</option>
+                   <option value="Boaco">Boaco</option>
+                   <option value="Chontales">Chontales</option>
+                   <option value="Rio San Juan">Rio San Juan</option>
+                   <option value="RAAS">RAAS</option>  
+                   <option value="RAAN">RAAN</option>              
+             </select>
+          </p>
+         </div> 
+    <div class="form-group">
+                <label for="country">Ciudad</label>
+                <input type="text" class="form-control" placeholder="Ciudad" id="country" name="ciud" required>
+            </div>
+     <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email_estudiante" name=" EMAIL" required>
+            </div>
+       <div class="form-group">
+                <label for="category">Carrera</label>
+                <input type="text" class="form-control" placeholder="Carrera" id="carrera" name="carrera" required>
+             </div>
+       <div class="form-group">
+                <label for="education">Contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1" name="pass1" required>
+            </div>
+      <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2" name="pass2" required>
+            </div>
+                      
+        <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+             </div>
+       <div class="form-group">
+                <label for="age">Fecha Nacimiento</label>
+                <input type="date" name="fnac" class="form-control" placeholder="Fecha Nacimiento" id="age" required>
+            </div>
+
+
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_registrar"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+        </form>
+    </div>
+   <!--Fin del Contenido del model -->	
+ </div>
+  </div>
+              <div class="modal-footer">
+
+              </div>
+            </div>
+          </div>
+        <!-- fin del modal -->
+  
+    <!-- Modal de registrar Profesor-->
+
+<div class="modal fade bd-example-modal-lg" id="registroProfesor" tabindex="-1" role="dialog" aria-labelleby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content   ">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">REGISTRO PROFESOR</h4>
+              </div>
+              <div class="modal-body">
+
+ <!--Contenido del model -->	
+    <div class="container redondo" id="advanced-search-form">
+    <div class="container11    text-center ">
+    <h3>
+    <div id="Errorp" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensajep" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+
+        <h2>Registrate</h2>  
+     <form id="form_registroProf" class="form-Registro" action="" method="post" name="form3" >
+      <input type="hidden" value="1" name="env_regist_prof" />
+     
+          <div class="form-group">
+                <label for="first-name">Nombres</label>
+                <input type="text" class="form-control" placeholder="Nombres" id="nameProf" name="nameProf" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="first-name">Apellidos</label>
+                <input type="text" class="form-control" placeholder="Apellidos" id="apellidoProf" name="apellidoProf" required   autofocus>
+            </div>
+          <div class="form-group">
+                <label for="first-name">Usuario</label>
+                <input type="text" class="form-control" placeholder="Nickname" id="user" name="user" required   autofocus>
+            </div>
+             <div class="form-group">
+                <label for="first-name">carrera</label>
+                <input type="text" class="form-control" placeholder="carrera" id="carrera" name="carrera" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="education">contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1p" name="pass1" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2p" name="pass2" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email_profe" name=" EMAIL" required>
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+           </div>
+          
+
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_regist_prof"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+        </form>
+    </div>
+   
+
+   <!--Fin del Contenido del model -->	
+ </div>
+  </div>
+              <div class="modal-footer">
+
+              </div>
+            </div>
+          </div>
+        <!-- fin del modal -->
+    
+		</section>
+
+

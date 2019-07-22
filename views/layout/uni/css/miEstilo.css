@@ -32,12 +32,13 @@
     }
 
     
-    .tamtex{
-        font-size: 25px;
-    
-    }
+  
     .texcolor{
         color:rgb(255, 5, 5);
+        font-style: italic;
+    }
+    .smscolor{
+        color:rgb(6, 42, 121);
         font-style: italic;
     }
     .cimg img:hover{
@@ -79,3 +80,23 @@
         color: #999;
     }
     .container11 { margin: 15px auto; position: relative; width: 290px; height: 30px; } 
+
+    .selector{
+        position: relative;
+        border: 1px solid rgb(47, 45, 45);
+        width: 80%;
+        height:38px;
+        overflow:hidden;
+        font-size: 14px;
+       
+
+        }
+      
+   .redondo{
+   -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;  
+    border-radius: 10px;       
+    -moz-box-shadow: rgb(150,150,150) 5px 5px 10px;
+    -webkit-box-shadow: rgb(150,150,150) 5px 5px 10px;
+    box-shadow: rgb(150,150,150) 5px 5px 10px;
+}

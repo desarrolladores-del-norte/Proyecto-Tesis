@@ -1,60 +1,107 @@
 
-<body>
-
+<?php if(isset($_layoutParams2['js']) && count($_layoutParams2['js']))
+    for($i=0;$i<count($_layoutParams2['js']);$i++)
+        echo"<script src='". $_layoutParams2['js'][$i]."'></script>";
+?>
+   
+   
     <div class="container" id="advanced-search-form">
-        <h2>Registrate</h2>
-        <form method="POST">
-            <div class="form-group">
-                <label for="first-name">Primer Nombre</label>
-                <input type="text" class="form-control" placeholder=" Primer Nombre" id="first-name" required  autofocus>
-            </div>
-            <div class="form-group">
-                <label for="first-name">Segundo Nombre</label>
-                <input type="text" class="form-control" placeholder=" Segundo Nombre" id="segnom">
-            </div>
-            <div class="form-group">
-                <label for="last-name">Primer Apellido</label>
-                <input type="text" class="form-control" placeholder="Primer Apellido" id="last-name">
-            </div>
-            <div class="form-group">
-                <label for="last-name">Segundo Apellido</label>
-                <input type="text" class="form-control" placeholder="Segundo Apellido" id="segap">
-            </div>
-            <div class="form-group">
-                <label for="country">Ciudad</label>
-                <input type="text" class="form-control" placeholder="Ciudad" id="country">
-            </div>
-            <div class="form-group">
-                <label for="number">Numero de teléfono</label>
-                <input type="text" class="form-control" placeholder="Numero de teléfono" id="number">
-            </div>
-            <div class="form-group">
-                <label for="age">Edad</label>
-                <input type="text" class="form-control" placeholder="Edad" id="age">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" placeholder="Email" id="email">
-            </div>
-            <div class="form-group">
-                <label for="category">Categoria</label>
-                <input type="text" class="form-control" placeholder="Categoria" id="category">
-            </div>
-            <div class="form-group">
-                <label for="education">Educacion</label>
-                <input type="text" class="form-control" placeholder="Educacion" id="education">
-            </div>
-            <div class="form-group">
-                <label>Genero</label>
-                <div class="radio">
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Masculino</label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Femenino</label>
+    <div class="container11   text-center ">
+    <h3>
+    <div id="Error" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensaje" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+
+        <h2>Registrate</h2>  
+     <form id="form_registro" class="form-Regis" action="" method="post" name="form2" >
+      <input type="hidden" value="1" name="enviarRegis" />
+         <div class="form-group">
+                <label for="first-name">Carnet</label>
+                <input type="text" class="form-control" placeholder="Carnet" id="carnetReg" name="carnetReg" required   autofocus>
                 </div>
+         <div class="form-group">
+                  <label for="first-name">Nombres</label>
+                  <input type="text" class="form-control" placeholder=" Nombres" id="name" name="Name" required >
+                </div>
+         <div class="form-group">
+                  <label for="last-name">Apellidos</label>
+                  <input type="text" class="form-control " placeholder=" Apellidos" id="apellido"  name="apellido" required>
+               </div>
+        <div class="form-group">
+                 <label for="number">Numero de teléfono</label>
+                 <input type="number" class="form-control" placeholder="Numero de teléfono" id="number" name="number" required>
+              </div>
+        <div class="form-group">
+               <p>
+                <label for="departamento">¿De que departamento resides?</label><br/>
+                 <select  class="form-control" name="departamento" id="pais">
+                   <option value="Managua">Managua</option>
+                   <option value="Masaya">Masaya</option> 
+                   <option value="Granada">Granada</option>
+                   <option value="Carazo">Carazo</option>
+                   <option value="Rivas">Rivas</option>  
+                   <option value="Chinandega">Chinandega</option>       
+                   <option value="Leon">Leon</option>
+                   <option value="Nueva segovia">Nueva Segovia</option>
+                   <option value="Madriz">Madriz</option>  
+                   <option value="Esteli">Esteli</option>
+                   <option value="Jinotega">Jinotega</option>
+                   <option value="Matagalpa">Matagalpa</option>
+                   <option value="Boaco">Boaco</option>
+                   <option value="Chontales">Chontales</option>
+                   <option value="Rio San Juan">Rio San Juan</option>
+                   <option value="RAAS">RAAS</option>  
+                   <option value="RAAN">RAAN</option>              
+             </select>
+          </p>
+         </div> 
+    <div class="form-group">
+                <label for="country">Ciudad</label>
+                <input type="text" class="form-control" placeholder="Ciudad" id="country" name="ciud" required>
             </div>
+     <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" name=" EMAIL" required>
+            </div>
+       <div class="form-group">
+                <label for="category">Carrera</label>
+                <input type="text" class="form-control" placeholder="Carrera" id="carrera" name="carrera" required>
+             </div>
+       <div class="form-group">
+                <label for="education">contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1" name="pass1" required>
+            </div>
+      <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2" name="pass2" required>
+            </div>
+                      
+        <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+             </div>
+       <div class="form-group">
+                <label for="age">Fecha Nacimiento</label>
+                <input type="date" name="fnac" class="form-control" placeholder="Fecha Nacimiento" id="age" required>
+            </div>
+
+
             <div class="clearfix"></div>
             <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_registrar"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
         </form>
     </div>
-</body>
+   
+

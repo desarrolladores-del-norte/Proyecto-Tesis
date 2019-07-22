@@ -15,7 +15,7 @@
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.min.js"></script>
+
   <script src="<?php echo $_layoutParams['ruta_js'];?>bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>jquery.dcjqaccordion.2.7.js"></script>
   <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.scrollTo.min.js"></script>

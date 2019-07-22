@@ -14,7 +14,7 @@ class studentController extends Controller
     
         public function index()
         {
-        
+            $this->_view->titulo = 'Estudiante';
             $this->_view->renderizar('index');
     
     

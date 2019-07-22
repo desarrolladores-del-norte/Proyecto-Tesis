@@ -104,11 +104,68 @@ class View{
           include_once ROOT.'views'.DS.'layout'.DS.DEFAULT_LAYOUT.DS.'header.php';
           include_once $rutaView;
           include_once ROOT.'views'.DS.'layout'.DS.DEFAULT_LAYOUT.DS.'footer.php';
+
       }
       else{
           throw new Exception('Error de vista: '.$rutaView);
       }
   }
+// construccion  de la pagina de inicio
+ public function render($vista)
+ {// menu 
+ $menu = array(
+   array(
+     'id' => 'Home',
+     'titulo' => 'Home',
+     'enlace' => BASE_URL."#body"
+        ),
+     array(
+            'id' => 'login',
+            'titulo' => 'Iniciar sesion',
+            'enlace' => BASE_URL."#sesion"
+              ),
+  array(
+             'id' => 'contac',
+            'titulo' => 'contactos',
+            'enlace' => BASE_URL."#footer"
+                                   ),                         
+                                );
+                               
+    
+    $js=array();
+    if(count($this->_js))
+    {
+        $js=$this->_js;
+    }
+
+      
+ $_layoutParams2 = array(
+          'ruta_css' => BASE_URL . 'views/layout/' .'inicio'. '/css/',
+          'ruta_img' => BASE_URL . 'views/layout/' . 'inicio' . '/img/',
+          'ruta_js' => BASE_URL . 'views/layout/' . 'inicio' . '/js/',
+          'ruta_public_css' => BASE_URL . 'public/css/',
+          'ruta_public_js' => BASE_URL . 'public/js/',
+          'ruta_public_img' => BASE_URL . 'public/img/',
+          
+          'menu'=>$menu,
+          'js'=>$js
+                       );
+
+
+
+ $rutaView=ROOT.'views'.DS.$this->_controlador.DS.$vista.'.phtml';
+      if(is_readable($rutaView)){
+          include_once ROOT.'views'.DS.'layout'.DS.'inicio'.DS.'header.php';
+          include_once $rutaView;
+          include_once ROOT.'views'.DS.'layout'.DS.'inicio'.DS.'footer.php';
+
+      }
+      else{
+          throw new Exception('Error de vista: '.$rutaView);
+      }
+  }
+
+// fin de funcion Render
 
 
   public function setJs(array $js)
@@ -123,7 +180,7 @@ class View{
       }
       else
       {
-          throw new Exception('Error de js');
+          throw new Exception('Error de Js');
       }
   }
 
