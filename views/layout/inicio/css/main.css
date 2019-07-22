@@ -693,6 +693,11 @@ label.error {
   line-height: 24px;
 }
 
+<<<<<<< HEAD
+=======
+.footer-single ul {
+  }
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
 
 .footer-single li {
   line-height: 32px;
@@ -707,7 +712,11 @@ label.error {
 }
 
 .credit a:hover {
+<<<<<<< HEAD
   color: rgb(9, 192, 248);
+=======
+  color: #fff;
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
 }
 
 .copyright {

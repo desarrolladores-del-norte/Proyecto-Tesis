@@ -105,6 +105,7 @@ class View{
           include_once $rutaView;
           include_once ROOT.'views'.DS.'layout'.DS.DEFAULT_LAYOUT.DS.'footer.php';
 
+<<<<<<< HEAD
       }
       else{
           throw new Exception('Error de vista: '.$rutaView);
@@ -159,11 +160,84 @@ class View{
           include_once $rutaView;
           include_once ROOT.'views'.DS.'layout'.DS.'inicio'.DS.'footer.php';
 
+=======
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
       }
       else{
           throw new Exception('Error de vista: '.$rutaView);
       }
   }
+// construccion  de la pagina de inicio
+ public function render($vista)
+<<<<<<< HEAD
+ {// menu 
+=======
+{// menu 
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
+ $menu = array(
+   array(
+     'id' => 'Home',
+     'titulo' => 'Home',
+     'enlace' => BASE_URL."#body"
+        ),
+     array(
+            'id' => 'login',
+            'titulo' => 'Iniciar sesion',
+            'enlace' => BASE_URL."#sesion"
+              ),
+  array(
+             'id' => 'contac',
+            'titulo' => 'contactos',
+            'enlace' => BASE_URL."#footer"
+<<<<<<< HEAD
+                                   ),                         
+                                );
+                               
+    
+    $js=array();
+    if(count($this->_js))
+    {
+        $js=$this->_js;
+    }
+=======
+                                   ),                            
+    );
+    
+   
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
+
+      
+ $_layoutParams2 = array(
+          'ruta_css' => BASE_URL . 'views/layout/' .'inicio'. '/css/',
+          'ruta_img' => BASE_URL . 'views/layout/' . 'inicio' . '/img/',
+          'ruta_js' => BASE_URL . 'views/layout/' . 'inicio' . '/js/',
+          'ruta_public_css' => BASE_URL . 'public/css/',
+          'ruta_public_js' => BASE_URL . 'public/js/',
+          'ruta_public_img' => BASE_URL . 'public/img/',
+          
+<<<<<<< HEAD
+          'menu'=>$menu,
+          'js'=>$js
+=======
+          'menu' => $menu
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
+                       );
+
+
+
+ $rutaView=ROOT.'views'.DS.$this->_controlador.DS.$vista.'.phtml';
+      if(is_readable($rutaView)){
+          include_once ROOT.'views'.DS.'layout'.DS.'inicio'.DS.'header.php';
+          include_once $rutaView;
+          include_once ROOT.'views'.DS.'layout'.DS.'inicio'.DS.'footer.php';
+
+      }
+      else{
+          throw new Exception('Error de vista: '.$rutaView);
+      }
+  }
+
+// fin de funcion Render
 
 // fin de funcion Render
 

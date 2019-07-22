@@ -109,7 +109,15 @@ $(document).ready(function(){
         }
     });
     $("#back-top").click(function () {
+<<<<<<< HEAD
         $("html,body").stop().animate({
+=======
+<<<<<<< HEAD
+        $("html,body").stop().animate({
+=======
+        $("html, body").stop().animate({
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
             scrollTop: 0
         }, 1500, "easeInOutExpo")
     });

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+<<<<<<< HEAD
      
 
     $("#form_log_est").submit(function(e){
@@ -56,3 +57,33 @@ $(document).ready(function(){
 
 
 });
+=======
+    
+     setTimeout(function() {
+         $("#mensaje").fadeIn(500).fadeOut(5000);
+     },);
+     
+ 
+ $("btn_loginEst").click(function(){
+     
+ var idC=$("#carnet").val();
+    $.ajax({
+     data: {"carnet" :idC },
+     type: "POST",
+     url:"getEstudiante",
+     success:(function(data){
+         if(data!=0){
+         $("#Error").html(data).fadeIn(500).fadeOut(7000);
+         return false;
+     }
+     })
+ });
+  
+ 
+ });
+ 
+ 
+ 
+ })
+ 
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f

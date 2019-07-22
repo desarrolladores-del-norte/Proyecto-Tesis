@@ -7,11 +7,16 @@ class inicioModel extends Model{
 
  
     public function getEstudiante($carnetEst, $passEst){
+<<<<<<< HEAD
         $studen = $this->_db->query(
+=======
+        $datos = $this->_db->query(
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
                 "select * from estudiante " . 
                 "where carnet='$carnetEst' " .
                 "and pass ='$passEst' " 
                 );
+<<<<<<< HEAD
                 if ($studen->fetch()){
                     return true;
                 }
@@ -20,15 +25,30 @@ class inicioModel extends Model{
 
     public function getprof($user, $passprof){
         $profe = $this->_db->query(
+=======
+        return $datos->fetch();
+    }
+
+    public function getprof($user, $passprof){
+        $datos = $this->_db->query(
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
                 "select * from profesor " . 
                 "where usuario='$user' " .
                 "and pass_prof ='$passprof' " 
                 );
+<<<<<<< HEAD
         return $profe->fetch();
     }
 
 
 
+=======
+        return $datos->fetch();
+    }
+
+
+    // registrar estudiante
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
     public function verificarCarnet($carnet)
     {
         $veri=$this->_db->query(
@@ -39,6 +59,7 @@ class inicioModel extends Model{
          }
          return false;
     }
+<<<<<<< HEAD
 
     
 
@@ -46,6 +67,12 @@ class inicioModel extends Model{
     {
         $correo=$this->_db->query(
                   "select email from estudiante where email='$email'"
+=======
+    public function  verificarEmail($email)
+    {
+        $correo=$this->_db->query(
+                  "select email from estudiante where email='$email'  "
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
         );
          if ($correo->fetch()){
              return true;
@@ -79,10 +106,17 @@ class inicioModel extends Model{
 
      //modelo de registrar profesor
 
+<<<<<<< HEAD
      public function verificaruser($users)
      {
          $verif=$this->_db->query(
                    "select usuario from profesor where usuario='$users'"
+=======
+     public function verificaruser($carnet)
+     {
+         $verif=$this->_db->query(
+                   "select usuario from profesor where usuario='$carnet'"
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
          );
          if ($verif->fetch()) {
               return true;

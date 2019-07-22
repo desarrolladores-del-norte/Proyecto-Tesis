@@ -28,12 +28,24 @@
 		</div>
 	</footer>
 		
+<<<<<<< HEAD
 		<a href="#slider" id="back-top"><i class="fa fa-angle-up fa-5x"></i></a>
+=======
+		<a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
 
 		<!-- Essential jQuery Plugins
 		================================================== -->
 		<!-- Main jQuery -->
+<<<<<<< HEAD
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-1.11.1.min"></script>
+=======
+<<<<<<< HEAD
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-1.11.1.min"></script>
+=======
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-1.11.1.min.js"></script>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
 		<!-- Single Page Nav -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.singlePageNav.min.js"></script>
 		<!-- Twitter Bootstrap -->
@@ -50,11 +62,25 @@
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.appear.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>main.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>zabuto_calen"></script>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+		<!-- Contact form validation -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+		<!-- Google Map -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+>>>>>>> 1f1356aebe58dd2af9110cccd2dbd722c7601c42
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
 		<!-- jquery easing -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.easing.min.js"></script>
 		<!-- jquery easing -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>wow.min.js"></script>
+<<<<<<< HEAD
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>wow.js"></script>
+=======
+>>>>>>> 8c6e9157c8ca43b04a17bc107f518f29fe3d5e6f
 		<script>
 			var wow = new WOW ({
 				boxClass:     'wow',      // animated element css class (default is wow)
